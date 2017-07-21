@@ -3,7 +3,7 @@ var Zenaton = require('zenaton-javascript');
 var bookCar = require('./BookCar');
 var sendBookingConfirmation = require('./SendBookingConfirmation');
 
-var carBookingWorkflow = new Zenaton.Workflow({
+module.exports = new Zenaton.Workflow({
     name: 'CarBookingWorkflow',
     handle: function() {
 
@@ -17,5 +17,3 @@ var carBookingWorkflow = new Zenaton.Workflow({
         }));
     }
 });
-
-module.exports = carBookingWorkflow;

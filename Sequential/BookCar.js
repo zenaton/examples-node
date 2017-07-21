@@ -1,8 +1,7 @@
 var Zenaton = require('zenaton-javascript');
-
 var _ = require('lodash');
 
-var bookCar = new Zenaton.Task({
+module.exports = new Zenaton.Task({
     name: 'BookCar',
     handle: function(done) {
         console.log('Reserving car for trip ID: ' + this.id);
@@ -14,5 +13,3 @@ var bookCar = new Zenaton.Task({
 
     }
 });
-
-module.exports = bookCar;

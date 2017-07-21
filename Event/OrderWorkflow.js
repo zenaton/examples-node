@@ -1,17 +1,14 @@
 var Zenaton = require('zenaton-javascript');
+var PrepareOrder = require('./PrepareOrder');
+var SendOrder = require('./SendOrder');
 
-var prepareOrder = require('./PrepareOrder');
-var sendOrder = require('./SendOrder');
-
-var orderWorkflow = new Zenaton.Workflow({
+module.exports = new Zenaton.Workflow({
     name: 'OrderWorkflow',
     handle: function() {
 
-        execute(prepareOrder({item: this.item}));
+        execute(PrepareOrder({item: this.item}));
 
-        if (!this.cancelled) {
-            execute(sendOrder({item: this.item, address: this.address}));
-        }
+        execute(SendOrder({item: this.item, address: this.address}));
     },
     onEvent: function(event) {
         if (event.name === 'AddressUpdatedEvent') {
@@ -19,5 +16,3 @@ var orderWorkflow = new Zenaton.Workflow({
         }
     }
 });
-
-module.exports = orderWorkflow;

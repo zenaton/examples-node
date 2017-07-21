@@ -1,14 +1,9 @@
 
 var client = require('./client');
-var waitWorkflow = require('./WaitWorkflow/WaitWorkflow');
-var orderCanceledEvent = require('./EventWorkflow/OrderCanceledEvent');
+var WelcomeWorkflow = require('./Wait/WelcomeWorkflow');
 
-var request = {
-    id: '1234567890',
-    customer_id: '2DER45G',
-    transport: 'air'
-};
+var user = { email: 'user@yoursite.com' };
 
- var instance = client.start(waitWorkflow(request));
+ var instance = client.start(WelcomeWorkflow(user));
  console.log('launched! ' + instance.getId());
 // transportBookingWorkflow(request).handle()

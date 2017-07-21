@@ -1,6 +1,6 @@
 var Zenaton = require('zenaton-javascript');
 
-var sendBookingConfirmation = new Zenaton.Task({
+module.exports = new Zenaton.Task({
     name: 'SendBookingConfirmation',
     handle: function(done) {
         console.log('Sending notification to customer ');
@@ -10,5 +10,3 @@ var sendBookingConfirmation = new Zenaton.Task({
         done();
     }
 });
-
-module.exports = sendBookingConfirmation;

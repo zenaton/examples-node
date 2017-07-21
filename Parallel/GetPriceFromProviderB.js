@@ -2,7 +2,7 @@ var Zenaton = require('zenaton-javascript');
 
 var _ = require('lodash');
 
-var getPriceFromProviderB = new Zenaton.Task({
+module.exports = new Zenaton.Task({
     name: 'GetPriceFromProviderB',
     handle: function(done) {
         console.log('Contacting provider B to get the price..');
@@ -15,5 +15,3 @@ var getPriceFromProviderB = new Zenaton.Task({
 
     }
 });
-
-module.exports = getPriceFromProviderB;

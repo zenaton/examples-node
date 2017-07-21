@@ -1,24 +1,22 @@
 var Zenaton = require('zenaton-javascript');
 
-var getPriceFromProviderA = require('./GetPriceFromProviderA');
-var getPriceFromProviderB = require('./GetPriceFromProviderB');
-var orderFromProviderA = require('./OrderFromProviderA');
-var orderFromProviderB = require('./OrderFromProviderB');
+var GetPriceFromProviderA = require('./GetPriceFromProviderA');
+var GetPriceFromProviderB = require('./GetPriceFromProviderB');
+var OrderFromProviderA = require('./OrderFromProviderA');
+var OrderFromProviderB = require('./OrderFromProviderB');
 
-var parallelWorkflow = new Zenaton.Workflow({
+module.exports = new Zenaton.Workflow({
     name: 'ParallelWorkflow',
     handle: function() {
         var [priceA, priceB] = execute(
-            getPriceFromProviderA(),
-            getPriceFromProviderB()
+            GetPriceFromProviderA(),
+            GetPriceFromProviderB()
         );
 
         if (priceA < priceB) {
-            execute(orderFromProviderA({item: this.item}));
+            execute(OrderFromProviderA({item: this.item}));
         } else {
-            execute(orderFromProviderB({item: this.item}));
+            execute(OrderFromProviderB({item: this.item}));
         }
     }
 });
-
-module.exports = parallelWorkflow;

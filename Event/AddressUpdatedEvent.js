@@ -1,7 +1,5 @@
 var Zenaton = require('zenaton-javascript');
 
-var addressUpdatedEvent = new Zenaton.Event({
+module.exports = new Zenaton.Event({
     name: 'AddressUpdatedEvent'
 });
-
-module.exports = addressUpdatedEvent;

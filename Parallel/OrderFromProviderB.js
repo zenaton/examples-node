@@ -1,6 +1,6 @@
 var Zenaton = require('zenaton-javascript');
 
-var orderFromProviderB = new Zenaton.Task({
+module.exports = new Zenaton.Task({
     name: 'OrderFromProviderB',
     handle: function(done) {
         console.log('Order "' + this.item + '" from Provider B');
@@ -8,5 +8,3 @@ var orderFromProviderB = new Zenaton.Task({
 
     }
 });
-
-module.exports = orderFromProviderB;
