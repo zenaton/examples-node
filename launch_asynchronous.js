@@ -1,6 +1,6 @@
 
 var client = require('./client');
-var sendInvitationsWorkflow = require('./AsynchronousWorkflow/SendInvitationsWorkflow');
+var sendInvitationsWorkflow = require('./Asynchronous/SendInvitationsWorkflow');
 
 var notifications = {
     names: ['Gilles', 'Julien', 'Oussama', 'Alice', 'Charlotte', 'Balthazar', 'Annabelle', 'Louis']

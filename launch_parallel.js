@@ -1,6 +1,6 @@
 
 var client = require('./client');
-var parallelWorkflow = require('./ParallelWorkflow/ParallelWorkflow');
+var parallelWorkflow = require('./Parallel/ParallelWorkflow');
 
 var item = {
     item: 'shirt'

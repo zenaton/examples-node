@@ -17,5 +17,9 @@ if (!api_token) {
     process.exit(1);
 }
 
+if (!app_env) {
+    console.log("Please add your Zenaton environment on '.env' file (https://zenaton.com/app/api)");
+    process.exit(1);
+}
 
 module.exports = new Client(app_id, api_token, app_env) ;
