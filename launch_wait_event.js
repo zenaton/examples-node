@@ -8,4 +8,4 @@ console.log('launched! ' + instance.getId());
 setTimeout(function(){
     instance.sendEvent(new UserActivatedEvent({ action: 'User did an important action' }));
     console.log("event sent!");
-}, 3000 );
+}, 6000 );
