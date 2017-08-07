@@ -11,7 +11,7 @@ module.exports = new Zenaton.Task({
             var price = _.random(80, 100);
             console.log('Price from Provider A is: ' + price);
             done(null, price);
-        }, _.random(5,10) * 1000 );
+        }, _.random(5, 10) * 1000 );
 
     }
 });

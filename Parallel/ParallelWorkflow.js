@@ -8,15 +8,16 @@ var OrderFromProviderB = require('./OrderFromProviderB');
 module.exports = new Zenaton.Workflow({
     name: 'ParallelWorkflow',
     handle: function() {
+
         var [priceA, priceB] = execute(
             GetPriceFromProviderA(),
             GetPriceFromProviderB()
         );
 
         if (priceA < priceB) {
-            execute(OrderFromProviderA({item: this.item}));
+            execute(OrderFromProviderA(this.data.item));
         } else {
-            execute(OrderFromProviderB({item: this.item}));
+            execute(OrderFromProviderB(this.data.item));
         }
     }
 });

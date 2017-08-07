@@ -6,13 +6,13 @@ module.exports = new Zenaton.Workflow({
     name: 'OrderWorkflow',
     handle: function() {
 
-        execute(PrepareOrder({item: this.item}));
+        execute(PrepareOrder(this.data.item));
 
-        execute(SendOrder({item: this.item, address: this.address}));
+        execute(SendOrder(this.data));
     },
     onEvent: function(event) {
         if (event.name === 'AddressUpdatedEvent') {
-            this.address = event.address;
+            this.data.address = event.address;
         }
     }
 });

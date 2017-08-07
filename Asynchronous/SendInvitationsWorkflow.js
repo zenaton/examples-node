@@ -10,9 +10,8 @@ var SendInvitationsWorkflow = new Zenaton.Workflow({
     name: 'SendInvitationsWorkflow',
 
     handle: function() {
-
-        _.each(this.names, (name) => {
-            executeAsync(sendInvitation({firstname: name}))
+        _.each(this.data.names, (name) => {
+            executeAsync(sendInvitation(name))
         });
 
     }

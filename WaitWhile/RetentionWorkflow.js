@@ -8,6 +8,6 @@ module.exports = new Zenaton.Workflow({
 
         execute((new WaitWhile('UserRetentionEvent')).seconds(10));
 
-        execute(new SendRetentionEmail({email: this.email}));
+        execute(new SendRetentionEmail(this.data.email));
     }
 });

@@ -4,7 +4,7 @@ var _ = require('lodash');
 module.exports = new Zenaton.Task({
     name: 'SendWelcomeEmail1',
     handle: function(done) {
-        console.log('Sending welcome email 1 to: ' + this.email);
+        console.log('Sending welcome email 1 to: ' + this.data);
         setTimeout(function(){
             console.log('- email 1 sent');
             done();
