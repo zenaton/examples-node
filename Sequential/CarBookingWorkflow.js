@@ -7,8 +7,8 @@ module.exports = new Zenaton.Workflow({
     name: 'CarBookingWorkflow',
     handle: function() {
 
-        this.data.booking_id = execute(BookCar(this.data.id));
+        this.data.booking_id = execute(new BookCar(this.data.id));
 
-        execute(SendBookingConfirmation(this.data));
+        execute(new SendBookingConfirmation(this.data));
     }
 });

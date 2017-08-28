@@ -10,14 +10,14 @@ module.exports = new Zenaton.Workflow({
     handle: function() {
 
         var [priceA, priceB] = execute(
-            GetPriceFromProviderA(),
-            GetPriceFromProviderB()
+            new GetPriceFromProviderA(),
+            new GetPriceFromProviderB()
         );
 
         if (priceA < priceB) {
-            execute(OrderFromProviderA(this.data.item));
+            execute(new OrderFromProviderA(this.data.item));
         } else {
-            execute(OrderFromProviderB(this.data.item));
+            execute(new OrderFromProviderB(this.data.item));
         }
     }
 });

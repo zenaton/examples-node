@@ -1,7 +1,7 @@
 
 var Zenaton = require('zenaton-javascript');
 
-var sendInvitation = require('./SendInvitation');
+var SendInvitation = require('./SendInvitation');
 
 var _ = require('lodash');
 
@@ -11,9 +11,8 @@ var SendInvitationsWorkflow = new Zenaton.Workflow({
 
     handle: function() {
         _.each(this.data.names, (name) => {
-            executeAsync(sendInvitation(name))
+            executeAsync(new SendInvitation(name))
         });
-
     }
 
 });
