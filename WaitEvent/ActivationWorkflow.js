@@ -8,14 +8,14 @@ module.exports = new Zenaton.Workflow({
     handle: function() {
         var event;
 
-        execute(new SendActivateEmail1({email: this.email}));
+        execute(new SendActivateEmail1(this.data.email));
         event = execute((new Wait('UserActivatedEvent')).seconds(5));
         if (event) {
             console.log('user activated at stage 1 - ' + event.action);
             return;
         }
 
-        execute(new SendActivateEmail2({email: this.email}));
+        execute(new SendActivateEmail2(this.data.email));
         event = execute((new Wait('UserActivatedEvent')).seconds(5));
         if (event) {
             console.log('user activated at stage 2 - ' + event.action);
