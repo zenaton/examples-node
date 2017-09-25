@@ -8,7 +8,7 @@ module.exports = new Zenaton.Task({
         setTimeout(function(){
             console.log('- email 2 sent');
             done();
-        }, _.random(1, 3) * 1000 );
+        }, 1 * 1000 );
 
     }
 });

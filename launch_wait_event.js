@@ -10,4 +10,4 @@ var instance = client.find('ActivationWorkflow').byId(data.email);
 setTimeout(function(){
     response = instance.sendEvent(new UserActivatedEvent({ action: 'User did an important action' }));
     console.log(response);
-}, 6000);
+}, 6 * 1000);
