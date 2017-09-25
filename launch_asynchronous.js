@@ -6,5 +6,5 @@ var notifications = {
     names: ['Gilles', 'Julien', 'Oussama', 'Alice', 'Charlotte', 'Balthazar', 'Annabelle', 'Louis']
 };
 
- var instance = client.start(new SendInvitationsWorkflow(notifications));
- console.log('launched! ' + instance.getId());
+var response = client.start(SendInvitationsWorkflow(notifications));
+console.log(response);

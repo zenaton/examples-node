@@ -7,6 +7,5 @@ var request = {
     customer_id: '2DER45G',
 };
 
- var instance = client.start(new CarBookingWorkflow(request));
- console.log('launched! ' + instance.getId());
-// carBookingWorkflow(request).handle()
+var response = client.start(new CarBookingWorkflow(request));
+console.log(response);

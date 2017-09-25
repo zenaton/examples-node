@@ -6,5 +6,5 @@ var item = {
     item: 'shirt'
 };
 
-var instance = client.start(new ParallelWorkflow(item));
-console.log('launched! ' + instance.getId());
+var response = client.start(new ParallelWorkflow(item));
+console.log(response);

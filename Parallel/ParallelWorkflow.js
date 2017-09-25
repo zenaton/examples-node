@@ -13,7 +13,8 @@ module.exports = new Zenaton.Workflow({
             new GetPriceFromProviderA(),
             new GetPriceFromProviderB()
         );
-
+        // throw new Error('hello');
+        
         if (priceA < priceB) {
             execute(new OrderFromProviderA(this.data.item));
         } else {

@@ -9,5 +9,8 @@ module.exports = new Zenaton.Workflow({
         execute((new WaitWhile('UserRetentionEvent')).seconds(10));
 
         execute(new SendRetentionEmail(this.data.email));
+    },
+    getId: function() {
+        return this.data.email;
     }
 });

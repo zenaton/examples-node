@@ -8,7 +8,6 @@ module.exports = new Zenaton.Workflow({
     handle: function() {
 
         this.data.booking_id = execute(new BookCar(this.data.id));
-
         execute(new SendBookingConfirmation(this.data));
     }
 });

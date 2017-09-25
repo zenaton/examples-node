@@ -14,5 +14,8 @@ module.exports = new Zenaton.Workflow({
         if (event.name === 'AddressUpdatedEvent') {
             this.data.address = event.address;
         }
+    },
+    getId: function() {
+        return this.data.item;
     }
 });

@@ -21,5 +21,8 @@ module.exports = new Zenaton.Workflow({
             console.log('user activated at stage 2 - ' + event.action);
             return;
         }
+    },
+    getId() {
+        return this.data.email;
     }
 });
