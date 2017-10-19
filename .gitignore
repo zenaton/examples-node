@@ -58,3 +58,5 @@ typings/
 .env
 
 zenaton
+
+zenaton.out
