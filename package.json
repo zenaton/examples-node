@@ -6,6 +6,6 @@
   "author": "Louis Cibot <louiscibot@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "zenaton-javascript": "^0.1.26"
+    "zenaton-javascript": "^0.1.30"
   }
 }

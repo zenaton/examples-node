@@ -25,7 +25,6 @@ module.exports = new Zenaton.Workflow({
         );
 
         if (event) {
-            console.log(event);
             return execute(new LogActivateUser(2));
         }
 

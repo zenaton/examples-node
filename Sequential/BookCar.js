@@ -1,5 +1,4 @@
 var Zenaton = require('zenaton-javascript');
-var _ = require('lodash');
 
 module.exports = new Zenaton.Task({
     name: 'BookCar',
@@ -9,7 +8,7 @@ module.exports = new Zenaton.Task({
         setTimeout(function(){
             var car_id = '1547826842785';
             done(null, car_id);
-        }, _.random(1, 3) * 1000 );
+        }, 2 * 1000 );
 
     }
 });

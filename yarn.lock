@@ -160,9 +160,9 @@ util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
 
-zenaton-javascript@*:
-  version "0.1.25"
-  resolved "https://registry.yarnpkg.com/zenaton-javascript/-/zenaton-javascript-0.1.25.tgz#8e18aebc9f0862cb2d5c046d2c949cdf692a14f8"
+zenaton-javascript@^0.1.30:
+  version "0.1.30"
+  resolved "https://registry.yarnpkg.com/zenaton-javascript/-/zenaton-javascript-0.1.30.tgz#81485e57edd4b1b57284535fd620c0c97aa5322f"
   dependencies:
     axios "^0.16.2"
     dotenv "^4.0.0"
