@@ -2,7 +2,7 @@
 require('dotenv').config();
 var Client = require('zenaton-javascript').Client;
 
-var app_id = process.env.ZENATON_APP_ID
+var app_id = process.env.ZENATON_APP_ID;
 var api_token = process.env.ZENATON_API_TOKEN;
 var app_env = process.env.ZENATON_APP_ENV;
 
