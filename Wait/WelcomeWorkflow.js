@@ -1,20 +1,20 @@
-var Zenaton = require('zenaton-javascript');
+var Zenaton = require('zenaton');
+var Workflow = Zenaton.Workflow;
 var Wait = Zenaton.Wait;
 var SendWelcomeEmail1 = require('./SendWelcomeEmail1');
 var SendWelcomeEmail2 = require('./SendWelcomeEmail2');
 var SendWelcomeEmail3 = require('./SendWelcomeEmail3');
 
-module.exports = new Zenaton.Workflow({
-    name: 'WelcomeWorkflow',
+module.exports = Workflow('WelcomeWorkflow', {
     handle: function() {
-        execute(SendWelcomeEmail1(this.data.email));
+        new SendWelcomeEmail1(this.email).execute();
 
-        execute((new Wait()).seconds(4));
+        new Wait().seconds(4).execute();
 
-        execute(SendWelcomeEmail2(this.data.email));
+        new SendWelcomeEmail2(this.email).execute();
 
-        execute((new Wait()).seconds(4));
+        new Wait().seconds(4).execute();
 
-        execute(SendWelcomeEmail3(this.data.email));
+        new SendWelcomeEmail3(this.email).execute();
     }
 });

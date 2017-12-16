@@ -1,5 +1,4 @@
-
-var client = require('./client');
+require('./client');
 var SendInvitationsWorkflow = require('./Asynchronous/SendInvitationsWorkflow');
 
 var notifications = {

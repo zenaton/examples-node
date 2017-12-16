@@ -1,36 +1,36 @@
-var Zenaton = require('zenaton-javascript');
+var Zenaton = require('zenaton');
+var Workflow = Zenaton.Workflow;
 var Wait = Zenaton.Wait;
 var SendActivateEmail1 = require('./SendActivateEmail1');
 var SendActivateEmail2 = require('./SendActivateEmail2');
 var LogActivateUser = require('./LogActivateUser');
 
-module.exports = new Zenaton.Workflow({
-    name: 'ActivationWorkflow',
+module.exports = Workflow('ActivationWorkflow', {
     handle: function() {
         var event;
         var tmp;
 
-        [tmp, event] = execute(
-            new SendActivateEmail1(this.data.email),
-            (new Wait('UserActivatedEvent')).seconds(5)
-        );
+        [tmp, event] = parallel(
+            new SendActivateEmail1(this.email),
+            new Wait('UserActivatedEvent').seconds(5)
+        ).execute();
 
         if (event) {
-            return execute(new LogActivateUser(1));
+            return new LogActivateUser(1).execute();
         }
 
-        [tmp, event] = execute(
-            new SendActivateEmail2(this.data.email),
-            (new Wait('UserActivatedEvent')).seconds(5)
-        );
+        [tmp, event] = parallel(
+            new SendActivateEmail2(this.email),
+            new Wait('UserActivatedEvent').seconds(5)
+        ).execute();
 
         if (event) {
-            return execute(new LogActivateUser(2));
+            return new LogActivateUser(2).execute();
         }
 
-        execute(new LogActivateUser(3));
+        new LogActivateUser(3).execute();
     },
     getId() {
-        return this.data.email;
+        return this.email;
     }
 });

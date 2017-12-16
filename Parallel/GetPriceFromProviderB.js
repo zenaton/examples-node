@@ -1,4 +1,4 @@
-var Zenaton = require('zenaton-javascript');
+var Zenaton = require('zenaton');
 
 var _ = require('lodash');
 

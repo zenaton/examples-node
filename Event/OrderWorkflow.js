@@ -1,21 +1,21 @@
-var Zenaton = require('zenaton-javascript');
+var Workflow = require('zenaton').Workflow;
 var PrepareOrder = require('./PrepareOrder');
 var SendOrder = require('./SendOrder');
 
-module.exports = new Zenaton.Workflow({
-    name: 'OrderWorkflow',
+module.exports = Workflow('OrderWorkflow', {
     handle: function() {
-
-        execute(new PrepareOrder(this.data.item));
-
-        execute(new SendOrder(this.data));
+        new PrepareOrder(this.item).execute();
+        new SendOrder(this.$data).execute();
     },
     onEvent: function(event) {
         if (event.name === 'AddressUpdatedEvent') {
-            this.data.address = event.address;
+            this.address = event.address;
         }
     },
     getId: function() {
-        return this.data.item;
+        return this.item;
+    },
+    onStart: function(task) {
+        console.log(task.name);
     }
 });

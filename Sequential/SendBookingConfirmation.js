@@ -1,12 +1,9 @@
-var Zenaton = require('zenaton-javascript');
+var Zenaton = require('zenaton');
 
-module.exports = new Zenaton.Task({
-    name: 'SendBookingConfirmation',
-    handle: function(done) {
-        console.log('Sending notification to customer ');
-        console.log('- Customer ID: ' + this.data.customer_id);
-        console.log('- Request ID: ' + this.data.id);
-        console.log('- Car ID: ' + this.data.booking_id);
+module.exports = Zenaton.Task('SendBookingConfirmation', function(done) {
+    console.log('Sending notification to customer ');
+    setTimeout(function() {
+        console.log('Sent for: ' + this.data.booking_id);
         done();
-    }
+    }, 2000);
 });

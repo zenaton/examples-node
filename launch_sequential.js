@@ -1,5 +1,5 @@
+require('./client');
 
-var client = require('./client');
 var CarBookingWorkflow = require('./Sequential/CarBookingWorkflow');
 
 var request = {
@@ -7,5 +7,4 @@ var request = {
     customer_id: '2DER45G',
 };
 
-var response = client.start(new CarBookingWorkflow(request));
-console.log(response);
+new CarBookingWorkflow(request).dispatch();
