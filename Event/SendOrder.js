@@ -1,10 +1,6 @@
-var Zenaton = require('zenaton');
-var _ = require('lodash');
+var Task = require("zenaton").Task;
 
-module.exports = new Zenaton.Task({
-    name: 'SendOrder',
-    handle: function(done) {
-        console.log('Sending ' + this.data.item + ' to ' + this.data.address);
-        done();
-    }
+module.exports = Task("SendOrder", function(done) {
+    console.log("Sending " + this.data.item + " to " + this.data.address);
+    done();
 });

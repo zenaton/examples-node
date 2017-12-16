@@ -1,11 +1,7 @@
-var Zenaton = require('zenaton');
-var _ = require('lodash');
+var Task = require("zenaton").Task;
 
-module.exports = new Zenaton.Task({
-    name: 'LogActivateUser',
-    handle: function(done) {
+module.exports = Task("LogActivateUser", function(done) {
+    console.log("Ending at stage "+ this.data);
 
-        console.log('Ending at stage '+ this.data);
-        done();
-    }
+    done();
 });

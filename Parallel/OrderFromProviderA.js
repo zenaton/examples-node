@@ -1,10 +1,7 @@
-var Zenaton = require('zenaton');
+var Task = require("zenaton").Task;
 
-module.exports = new Zenaton.Task({
-    name: 'OrderFromProviderA',
-    handle: function(done) {
-        console.log('Order "' + this.data + '" from Provider A');
-        done();
+module.exports = new Task("OrderFromProviderA", function(done) {
+    console.log("Order \"" + this.data + "\" from Provider A");
 
-    }
+    done();
 });

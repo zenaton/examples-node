@@ -1,7 +1,6 @@
-require('./Sequential/CarBookingWorkflow');
-require('./Parallel/ParallelWorkflow');
-require('./Asynchronous/SendInvitationsWorkflow');
-require('./Event/OrderWorkflow');
-require('./Wait/WelcomeWorkflow');
-require('./WaitEvent/ActivationWorkflow');
-require('./WaitWhile/RetentionWorkflow');
+require("./Sequential/CarBookingWorkflow");
+require("./Parallel/ParallelWorkflow");
+require("./Asynchronous/SendInvitationsWorkflow");
+require("./Event/OrderWorkflow");
+require("./Wait/WelcomeWorkflow");
+require("./WaitEvent/ActivationWorkflow");

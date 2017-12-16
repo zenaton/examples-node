@@ -1,5 +1,5 @@
 // load .env file
-require('dotenv').config();
+require("dotenv").config();
 
 var app_id = process.env.ZENATON_APP_ID;
 if (!app_id) {
@@ -20,5 +20,5 @@ if (!app_env) {
 }
 
 // init Zenaton client
-var Client = require('zenaton').Client;
+var Client = require("zenaton").Client;
 new Client(app_id, api_token, app_env);

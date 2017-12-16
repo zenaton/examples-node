@@ -1,14 +1,10 @@
-var Zenaton = require('zenaton');
-var _ = require('lodash');
+var Task = require("zenaton").Task;
 
-module.exports = new Zenaton.Task({
-    name: 'SendWelcomeEmail2',
-    handle: function(done) {
-        console.log('Sending welcome email 2 to: ' + this.data);
-        setTimeout(function(){
-            console.log('- email 2 sent');
-            done();
-        }, _.random(1, 3) * 1000 );
+module.exports = Task("SendWelcomeEmail2", function(done) {
+    console.log("Sending welcome email 2 to: " + this.data);
+    setTimeout(function(){
+        console.log("- email 2 sent");
 
-    }
+        done();
+    }, 2000 );
 });

@@ -1,13 +1,11 @@
-var client = require('./client');
-var ActivationWorkflow = require('./WaitEvent/ActivationWorkflow');
-var UserActivatedEvent = require('./WaitEvent/UserActivatedEvent');
+require("./client");
+var ActivationWorkflow = require("./WaitEvent/ActivationWorkflow");
+var UserActivatedEvent = require("./WaitEvent/UserActivatedEvent");
 
-var data = { email: 'user@yoursite.com' };
-var response = client.start(new ActivationWorkflow(data));
-console.log(response);
+new ActivationWorkflow({ email: "user@yoursite.com" }).dispatch();
 
-var instance = client.find('ActivationWorkflow').byId(data.email);
+var instance = client.find("ActivationWorkflow").byId(data.email);
 setTimeout(function(){
-    response = instance.sendEvent(new UserActivatedEvent({ action: 'User did an important action' }));
+    response = instance.sendEvent(new UserActivatedEvent({ action: "User did an important action" }));
     console.log(response);
 }, 6 * 1000);

@@ -1,11 +1,11 @@
-var Zenaton = require('zenaton');
+var Zenaton = require("zenaton");
 var Workflow = Zenaton.Workflow;
 var Wait = Zenaton.Wait;
-var SendWelcomeEmail1 = require('./SendWelcomeEmail1');
-var SendWelcomeEmail2 = require('./SendWelcomeEmail2');
-var SendWelcomeEmail3 = require('./SendWelcomeEmail3');
+var SendWelcomeEmail1 = require("./SendWelcomeEmail1");
+var SendWelcomeEmail2 = require("./SendWelcomeEmail2");
+var SendWelcomeEmail3 = require("./SendWelcomeEmail3");
 
-module.exports = Workflow('WelcomeWorkflow', {
+module.exports = Workflow("WelcomeWorkflow", {
     handle: function() {
         new SendWelcomeEmail1(this.email).execute();
 
