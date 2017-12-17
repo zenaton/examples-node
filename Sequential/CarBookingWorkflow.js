@@ -6,8 +6,5 @@ module.exports = Workflow("CarBookingWorkflow", {
     handle: function() {
         this.booking_id = (new BookCar(this.id)).execute();
         (new SendBookingConfirmation(this)).execute();
-    },
-    getId: function() {
-        return this.id;
     }
 });

@@ -161,7 +161,7 @@ util-deprecate@~1.0.1:
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
 
 "zenaton@file:../zenaton-javascript":
-  version "0.2.0"
+  version "0.2.1"
   dependencies:
     axios "^0.16.2"
     dotenv "^4.0.0"
