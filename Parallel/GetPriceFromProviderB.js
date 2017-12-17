@@ -1,7 +1,7 @@
 var Task = require("zenaton").Task;
 var _ = require("lodash");
 
-module.exports = new Task("GetPriceFromProviderB", function(done) {
+module.exports = Task("GetPriceFromProviderB", function(done) {
     console.log("Contacting provider B to get the price..");
     setTimeout(function(){
         var price = _.random(80, 100);
