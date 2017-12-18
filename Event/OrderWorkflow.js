@@ -7,9 +7,9 @@ module.exports = Workflow("OrderWorkflow", {
         new PrepareOrder(this.item).execute();
         new SendOrder(this).execute();
     },
-    onEvent: function(event) {
-        if (event.name === "AddressUpdatedEvent") {
-            this.address = event.address;
+    onEvent: function(event, data) {
+        if (event === "AddressUpdatedEvent") {
+            this.address = data.address;
         }
     },
     getId: function() {

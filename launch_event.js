@@ -1,17 +1,14 @@
 require("./client");
 var OrderWorkflow = require("./Event/OrderWorkflow");
-var AddressUpdatedEvent = require("./Event/AddressUpdatedEvent");
 
 var data = {
-    item: "shirt",
+    name: "shirt",
+    orderId:  "3141592",
     address: "1600 Pennsylvania Ave NW, Washington, DC 20500, USA"
 };
 
 new OrderWorkflow(data).dispatch();
 
-
-var instance = client.find("OrderWorkflow").byId(data.item);
 setTimeout(function(){
-    var response = instance.sendEvent(new AddressUpdatedEvent({address: "One Infinite Loop Cupertino, CA 95014"}));
-    console.log(response);
+    OrderWorkflow.whereId("3141592").send("AddressUpdatedEvent", {address: "One Infinite Loop Cupertino, CA 95014"});
 }, 2000 );
