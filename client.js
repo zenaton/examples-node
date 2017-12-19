@@ -20,5 +20,4 @@ if (!app_env) {
 }
 
 // init Zenaton client
-var Client = require("zenaton").Client;
-new Client(app_id, api_token, app_env);
+require("zenaton").Client.init(app_id, api_token, app_env);
