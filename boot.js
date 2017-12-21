@@ -1,3 +1,4 @@
+require("./client");
 require("./Sequential/CarBookingWorkflow");
 require("./Parallel/ParallelWorkflow");
 require("./Asynchronous/SendInvitationsWorkflow");
