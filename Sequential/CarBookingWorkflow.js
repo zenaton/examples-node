@@ -1,10 +1,8 @@
 var Workflow = require("zenaton").Workflow;
 var BookCar = require("./BookCar");
-var SendBookingConfirmation = require("./SendBookingConfirmation");
+var SendConfirmation = require("./SendConfirmation");
 
-module.exports = Workflow("CarBookingWorkflow", {
-    handle: function() {
-        this.booking_id = (new BookCar(this.id)).execute();
-        (new SendBookingConfirmation(this)).execute();
-    }
+module.exports = Workflow("CarBookingWorkflow", function() {
+    this.booking_id = new BookCar(this.id).execute();
+    new SendConfirmation(this).execute();
 });

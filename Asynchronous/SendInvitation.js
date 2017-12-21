@@ -1,11 +1,11 @@
 var Task = require("zenaton").Task;
 
 module.exports = Task("SendInvitation", function(done) {
-    console.log("Sending Invitation to: " + this.data);
+    console.log("Sending Invitation to: " + this);
     var that = this;
     setTimeout(function(){
-        console.log("Invitation Well sent to " + that.data);
+        console.log("Invitation Well sent to " + that);
 
         done();
-    }, 2 * 1000 );
+    }, 2000 );
 });

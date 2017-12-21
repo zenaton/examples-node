@@ -1,4 +1,6 @@
 require("./client");
-var CarBookingWorkflow = require("./Sequential/CarBookingWorkflow");
+const util = require('util')
 
-new CarBookingWorkflow({id: "1234567890", customer_id: "2DER45G"}).dispatch();
+var Car = require("./Sequential/CarBookingWorkflow");
+
+new Car({id: "1234567890", customer_id: "2DER45G"}).dispatch();
