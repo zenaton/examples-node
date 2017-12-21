@@ -1,9 +1,9 @@
 var Task = require("zenaton").Task;
 
 module.exports = Task("OrderFromProviderB", function(done) {
-    console.log("Order \"" + this.data + "\" from Provider B");
+    console.log("Order \"" + this + "\" from Provider B");
 
-    setTimeout(function(){
+    setTimeout(function() {
         done();
     }, 500);
 });

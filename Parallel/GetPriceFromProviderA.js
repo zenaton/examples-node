@@ -7,5 +7,5 @@ module.exports = Task("GetPriceFromProviderA", function(done) {
         console.log("Price from Provider A is: " + price);
 
         done(null, price);
-    }, 2000 );
+    }, 1500 );
 });
