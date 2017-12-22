@@ -1,12 +1,10 @@
 var Task = require("zenaton").Task;
-var _ = require("lodash");
 
 module.exports = Task("PrepareOrder", function(done) {
-    console.log("Preparing order for item: " + this.data);
+    console.log("Preparing order for item: " + this);
     setTimeout(function(){
         console.log("Order prepared");
-        
-        done();
-    }, _.random(5,10) * 1000 );
 
+        done();
+    },  7000 );
 });
