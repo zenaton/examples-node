@@ -1,10 +1,10 @@
-var Task = require("zenaton").Task;
+var { Task } = require("zenaton");
 
 module.exports = Task("SendWelcomeEmail1", function(done) {
-    console.log("Sending welcome email 1 to: " + this.data);
-    setTimeout(function(){
-        console.log("- email 1 sent");
+  console.log("Sending welcome email 1 to: " + this);
+  setTimeout(function(){
+    console.log("- email 1 sent");
 
-        done();
-    }, 2000 );
+    done();
+  }, 2000 );
 });
