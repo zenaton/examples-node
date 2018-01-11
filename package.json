@@ -7,5 +7,6 @@
   "license": "MIT",
   "dependencies": {
     "zenaton": "file:../zenaton-javascript"
-  }
+  },
+  "devDependencies": {}
 }
