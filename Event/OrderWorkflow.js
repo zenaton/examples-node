@@ -3,7 +3,7 @@ var PrepareOrder = require("./PrepareOrder");
 var SendOrder = require("./SendOrder");
 
 module.exports = Workflow("OrderWorkflow", {
-  construct(item, orderId, address) {
+  init(item, orderId, address) {
     this.item = item;
     this.orderId = orderId;
     this.address = address;
@@ -20,5 +20,4 @@ module.exports = Workflow("OrderWorkflow", {
   id() {
     return this.orderId;
   }
-}
-);
+});

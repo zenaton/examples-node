@@ -1,7 +1,7 @@
 var { Task } = require("zenaton");
 
 module.exports = Task("Version/OrderFromProviderB", {
-  construct(item, version) {
+  init(item, version) {
     this.item = item;
     this.version = version;
     this.provider = "B";

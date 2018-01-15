@@ -5,6 +5,6 @@ module.exports = Task("SendWelcomeEmail1", function(done) {
   setTimeout(function(){
     console.log("- email 1 sent");
 
-    done();
+    done(null, 1);
   }, 2000 );
 });

@@ -5,6 +5,8 @@ var SendWelcomeEmail3 = require("./SendWelcomeEmail3");
 
 module.exports = Workflow("WelcomeWorkflow", {
   handle: function() {
+    Wait.timezone("Europe/Paris");
+
     new SendWelcomeEmail1(this.email).execute();
 
     new Wait().seconds(4).execute();
@@ -14,5 +16,11 @@ module.exports = Workflow("WelcomeWorkflow", {
     new Wait().seconds(4).execute();
 
     new SendWelcomeEmail3(this.email).execute();
+  },
+  onStart(task) {
+    console.log("onStart: " + task.name);
+  },
+  onSuccess(task, output) {
+    console.log("onSuccess: " + task.name + " , " + output);
   }
 });

@@ -12,4 +12,5 @@ node_modules/
 
 # zenaton files
 zenaton.out
+zenaton.log
 zenaton.err
