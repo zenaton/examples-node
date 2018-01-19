@@ -1,5 +1,5 @@
 // load .env file
-require("dotenv").load();
+require("dotenv").config({path: __dirname + "/.env"});
 
 var app_id = process.env.ZENATON_APP_ID;
 if (!app_id) {
