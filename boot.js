@@ -6,3 +6,4 @@ require("./Event/OrderWorkflow");
 require("./Version/ParallelWorkflow");
 require("./Wait/WelcomeWorkflow");
 require("./WaitEvent/ActivationWorkflow");
+require("./Recursive/RecursiveWorkflow");
