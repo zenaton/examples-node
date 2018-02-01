@@ -5,7 +5,8 @@ var item = "shirt";
 var orderId = "3141592";
 var address = "1600 Pennsylvania Ave NW, Washington, DC 20500, USA";
 
-// OrderWorkflow.whereId(data.orderId).kill();
+// if you need to kill an existing workflow, use:
+// OrderWorkflow.whereId(orderId).kill();
 
 new OrderWorkflow(item, orderId, address).dispatch();
 
