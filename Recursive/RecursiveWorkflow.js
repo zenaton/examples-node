@@ -4,22 +4,22 @@ var RelaunchTask = require("./RelaunchTask");
 var SendEventTask = require("./SendEventTask");
 
 module.exports = Workflow("RecursiveWorkflow", {
-  init(id) {
+  init(id, max) {
     this.id = id;
-    this.counter = 0;
+    this.max = max;
   },
   handle() {
-    while (this.counter < 10) {
-      new DisplayTask(this.counter).execute();
-      this.counter++;
+    var counter = 0;
+    while (counter < 10) {
+      new DisplayTask(counter).execute();
+      counter++;
     }
 
     new SendEventTask(this.id).dispatch();
 
     new Wait("EndingEvent").execute();
 
-    new RelaunchTask(this.id).execute();
-
+    new RelaunchTask(this.id, this.max).execute();
   },
   id() {
     return this.id;
