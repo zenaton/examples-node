@@ -43,9 +43,9 @@ ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
-zenaton@^0.4.0:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/zenaton/-/zenaton-0.4.2.tgz#3f544949793bfe855b3abb819f43b2894f26a9e9"
+zenaton@^0.4:
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/zenaton/-/zenaton-0.4.6.tgz#430265eca6bae82edbc3c04d933ae68e3db693ab"
   dependencies:
     axios "^0.16.2"
     dotenv "^4.0.0"
