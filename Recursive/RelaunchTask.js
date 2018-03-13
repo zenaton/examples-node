@@ -7,14 +7,20 @@ module.exports = Task("RelaunchTask", {
     this.max = max;
   },
   handle(done) {
-    if (this.id < this.max) {
-      // Get workflow class definition
-      var RecursiveWorkflow = Workflow("RecursiveWorkflow");
-
-      // launch new workflow
-      new RecursiveWorkflow(1 + this.id, this.max).dispatch()
-        .then( result => { done(null, result); })
-        .catch( error => { done(error, null); });
+    if (this.id >= this.max) {
+      done();
+      return;
     }
+
+    // Get workflow class definition
+    var RecursiveWorkflow = Workflow("RecursiveWorkflow");
+
+    // launch new workflow
+    let id = 1 + this.id;
+    console.log("\nIteration: " + id);
+
+    new RecursiveWorkflow(id, this.max).dispatch()
+      .then( result => { done(null, result); })
+      .catch( error => { done(error, null); });
   }
 });
