@@ -1,4 +1,4 @@
 require("./client");
-var WelcomeWorkflow = require("./Wait/WelcomeWorkflow");
+var WaitWorkflow = require("./Workflows/WaitWorkflow");
 
-new WelcomeWorkflow({email: "user@yoursite.com"}).dispatch();
+new WaitWorkflow().dispatch();
