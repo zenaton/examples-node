@@ -1,9 +1,9 @@
 require("./client");
-require("./Sequential/CarBookingWorkflow");
-require("./Parallel/ParallelWorkflow");
-require("./Asynchronous/SendInvitationsWorkflow");
-require("./Event/OrderWorkflow");
-require("./Version/ParallelWorkflow");
-require("./Wait/WelcomeWorkflow");
-require("./WaitEvent/ActivationWorkflow");
+require("./Workflows/SequentialWorkflow");
+require("./Workflows/ParallelWorkflow");
+require("./Workflows/AsynchronousWorkflow");
+require("./Workflows/WaitWorkflow");
+require("./Workflows/WaitEventWorkflow");
+require("./Workflows/EventWorkflow");
+require("./Workflows/VersionWorkflow");
 require("./Recursive/RecursiveWorkflow");

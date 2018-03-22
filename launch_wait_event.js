@@ -1,11 +1,8 @@
 require("./client");
-var ActivationWorkflow = require("./WaitEvent/ActivationWorkflow");
+var WaitEventWorkflow = require("./Workflows/WaitEventWorkflow");
 
-// if you need to kill an existing workflow, use:
-// ActivationWorkflow.whereId("user@yoursite.com").kill();
-
-new ActivationWorkflow({ email: "user@yoursite.com" }).dispatch();
+new WaitEventWorkflow().dispatch();
 
 setTimeout(function(){
-  ActivationWorkflow.whereId("user@yoursite.com").send("UserActivatedEvent", {action: "User did an important action" });
-}, 7000);
+  WaitEventWorkflow.whereId("MyWaitEventWorkflowExample").send("MyEvent", {});
+}, 2000);

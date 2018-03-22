@@ -1,5 +1,5 @@
 require("./client");
 
-var ParallelWorkflow = require("./Version/ParallelWorkflow");
+var VersionWorkflow = require("./Workflows/VersionWorkflow");
 
-new ParallelWorkflow({ item: "shirt" }).dispatch();
+new VersionWorkflow().dispatch();

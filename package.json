@@ -6,7 +6,7 @@
   "author": "Zenaton Inc",
   "license": "MIT",
   "dependencies": {
-    "zenaton": "^0.4.6"
+    "zenaton": "^0.4.7"
   },
   "devDependencies": {}
 }

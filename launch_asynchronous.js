@@ -1,6 +1,5 @@
 require("./client");
-var SendInvitationsWorkflow = require("./Asynchronous/SendInvitationsWorkflow");
 
-var recipients = ["Gilles", "Julien", "Oussama", "Alice", "Charlotte", "Balthazar", "Annabelle", "Louis"];
+var AsynchronousWorkflow = require("./Workflows/AsynchronousWorkflow");
 
-new SendInvitationsWorkflow(recipients).dispatch();
+new AsynchronousWorkflow().dispatch();
