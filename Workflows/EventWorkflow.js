@@ -13,12 +13,11 @@ module.exports = Workflow("EventWorkflow", {
     new TaskB().execute();
   },
   onEvent(eventName, eventData) {
-    console.log("Event received: " + eventName);
     if (eventName === "MyEvent") {
-      new TaskC().dispatch();
+      new TaskC().execute();
     }
   },
   id() {
-    return "MyEventWorkflowExample";
+    return "MyId";
   }
 });

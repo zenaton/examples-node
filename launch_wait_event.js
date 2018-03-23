@@ -4,5 +4,5 @@ var WaitEventWorkflow = require("./Workflows/WaitEventWorkflow");
 new WaitEventWorkflow().dispatch();
 
 setTimeout(function(){
-  WaitEventWorkflow.whereId("MyWaitEventWorkflowExample").send("MyEvent", {});
+  WaitEventWorkflow.whereId("MyId").send("MyEvent", {});
 }, 2000);

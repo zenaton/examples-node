@@ -20,6 +20,6 @@ module.exports = Workflow("WaitEventWorkflow", {
     }
   },
   id() {
-    return "MyWaitEventWorkflowExample";
+    return "MyId";
   }
 });

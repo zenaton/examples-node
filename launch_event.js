@@ -7,5 +7,5 @@ var EventWorkflow = require("./Workflows/EventWorkflow");
 new EventWorkflow().dispatch();
 
 setTimeout(function() {
-  EventWorkflow.whereId("MyEventWorkflowExample").send("MyEvent", {});
+  EventWorkflow.whereId("MyId").send("MyEvent", {});
 }, 2000 );
