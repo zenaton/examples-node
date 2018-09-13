@@ -1,8 +1,13 @@
 require("./client");
-var WaitEventWorkflow = require("./Workflows/WaitEventWorkflow");
 
-new WaitEventWorkflow().dispatch();
+const
+  uniqid = require("uniqid"),
+  WaitEventWorkflow = require("./Workflows/WaitEventWorkflow")
+;
+
+const id = uniqid();
+new WaitEventWorkflow(id).dispatch();
 
 setTimeout(function(){
-  WaitEventWorkflow.whereId("MyId").send("MyEvent", {});
-}, 2000);
+  WaitEventWorkflow.whereId(id).send("MyEvent", {});
+}, 1000);

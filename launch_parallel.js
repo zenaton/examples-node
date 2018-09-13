@@ -1,5 +1,5 @@
 require("./client");
 
-var ParallelWorkflow = require("./Workflows/ParallelWorkflow");
+const ParallelWorkflow = require("./Workflows/ParallelWorkflow");
 
 new ParallelWorkflow().dispatch();

@@ -1,5 +1,5 @@
 require("./client");
 
-var VersionWorkflow = require("./Workflows/VersionWorkflow");
+const VersionWorkflow = require("./Workflows/VersionWorkflow");
 
 new VersionWorkflow().dispatch();
