@@ -1,8 +1,9 @@
-var {Task} = require("zenaton");
+const {Task} = require("zenaton");
 
 module.exports = Task("TaskB", function(done) {
-  console.log("Task B");
+  console.log("Task B starts");
   setTimeout(function() {
-    done(null, "Task B");
+    console.log("Task B ends");
+    done(null, 1);
   }, 5000);
 });

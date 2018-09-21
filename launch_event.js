@@ -1,11 +1,13 @@
 require("./client");
-var EventWorkflow = require("./Workflows/EventWorkflow");
 
-// if you need to kill an existing workflow, use:
-// OrderWorkflow.whereId(orderId).kill();
+const
+  uniqid = require("uniqid"),
+  EventWorkflow = require("./Workflows/EventWorkflow")
+;
 
-new EventWorkflow().dispatch();
+const id = uniqid();
+new EventWorkflow(id).dispatch();
 
 setTimeout(function() {
-  EventWorkflow.whereId("MyId").send("MyEvent", {});
-}, 2000 );
+  EventWorkflow.whereId(id).send("MyEvent", {});
+}, 1000);

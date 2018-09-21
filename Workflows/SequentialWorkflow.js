@@ -1,10 +1,16 @@
-var { Workflow } = require("zenaton");
-
-var TaskA = require("../Tasks/TaskA");
-var TaskB = require("../Tasks/TaskB");
+const
+  { Workflow } = require("zenaton"),
+  TaskA = require("../Tasks/TaskA"),
+  TaskB = require("../Tasks/TaskB"),
+  TaskC = require("../Tasks/TaskC")
+;
 
 module.exports = Workflow("SequentialWorkflow", function() {
-  new TaskA().execute();
+  const a = new TaskA().execute();
 
-  new TaskB().execute();
+  if (a === 0) {
+    new TaskB().execute();
+  } else {
+    new TaskC().execute();
+  }
 });
