@@ -6,4 +6,5 @@ require("./Workflows/WaitWorkflow");
 require("./Workflows/WaitEventWorkflow");
 require("./Workflows/EventWorkflow");
 require("./Workflows/VersionWorkflow");
+require("./Workflows/ErrorWorkflow");
 require("./Recursive/RecursiveWorkflow");
