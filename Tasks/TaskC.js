@@ -1,9 +1,12 @@
-const {Task} = require("zenaton");
+const { Task } = require("zenaton");
 
-module.exports = Task("TaskC", function(done) {
+module.exports = Task("TaskC", async function() {
   console.log("Task C starts");
-  setTimeout(function() {
-    console.log("Task C ends");
-    done(null, 2);
-  }, 7000);
+
+  await new Promise(resolve => {
+    setTimeout(resolve, 7000);
+  });
+
+  console.log("Task C ends");
+  return 2;
 });

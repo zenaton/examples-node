@@ -1,21 +1,20 @@
-const
-  { Workflow } = require("zenaton"),
-  TaskA = require("../Tasks/TaskA"),
-  TaskB = require("../Tasks/TaskB"),
-  TaskC = require("../Tasks/TaskC")
-;
+const { Workflow } = require("zenaton");
+const TaskA = require("../Tasks/TaskA");
+const TaskB = require("../Tasks/TaskB");
+const TaskC = require("../Tasks/TaskC");
 
 module.exports = Workflow("EventWorkflow", {
   init(id) {
     this.id = id;
     this.state = true;
   },
-  handle() {
-    new TaskA().execute();
+  async handle() {
+    await new TaskA().execute();
+
     if (this.state) {
-      new TaskB().execute();
+      await new TaskB().execute();
     } else {
-      new TaskC().execute();
+      await new TaskC().execute();
     }
   },
   onEvent(eventName, eventData) {

@@ -1,15 +1,13 @@
-const
-  {Workflow} = require("zenaton"),
-  TaskA = require("../Tasks/TaskA"),
-  TaskC = require("../Tasks/TaskC"),
-  TaskE = require("../Tasks/TaskE")
-;
+const { Workflow, Parallel } = require("zenaton");
+const TaskA = require("../Tasks/TaskA");
+const TaskC = require("../Tasks/TaskC");
+const TaskE = require("../Tasks/TaskE");
 
-module.exports = Workflow("ErrorWorkflow", function() {
-  [
+module.exports = Workflow("ErrorWorkflow", async function() {
+  await new Parallel(
     new TaskA(),
     new TaskE()
-  ].execute();
+  ).execute();
 
-  new TaskC().execute();
+  await new TaskC().execute();
 });

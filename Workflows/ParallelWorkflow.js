@@ -1,20 +1,18 @@
-const
-  {Workflow} = require("zenaton"),
-  TaskA = require("../Tasks/TaskA"),
-  TaskB = require("../Tasks/TaskB"),
-  TaskC = require("../Tasks/TaskC"),
-  TaskD = require("../Tasks/TaskD")
-;
+const { Workflow, Parallel } = require("zenaton");
+const TaskA = require("../Tasks/TaskA");
+const TaskB = require("../Tasks/TaskB");
+const TaskC = require("../Tasks/TaskC");
+const TaskD = require("../Tasks/TaskD");
 
-module.exports = Workflow("ParallelWorkflow", function() {
-  const [a, b] = [
+module.exports = Workflow("ParallelWorkflow", async function() {
+  const [a, b] = await new Parallel(
     new TaskA(),
     new TaskB()
-  ].execute();
+  ).execute();
 
   if (a > b) {
-    new TaskC().execute();
+    await new TaskC().execute();
   } else {
-    new TaskD().execute();
+    await new TaskD().execute();
   }
 });
