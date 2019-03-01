@@ -2,4 +2,6 @@ require("./client");
 
 const SequentialWorkflow = require("./Workflows/SequentialWorkflow");
 
-new SequentialWorkflow().dispatch();
+new SequentialWorkflow().dispatch().catch(err => {
+  console.error(err);
+});

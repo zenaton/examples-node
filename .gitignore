@@ -11,6 +11,4 @@ node_modules/
 .env
 
 # zenaton files
-zenaton.out
-zenaton.log
-zenaton.err
+zenaton.*

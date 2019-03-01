@@ -2,4 +2,6 @@ require("./client");
 
 const VersionWorkflow = require("./Workflows/VersionWorkflow");
 
-new VersionWorkflow().dispatch();
+new VersionWorkflow().dispatch().catch(err => {
+  console.error(err);
+});
