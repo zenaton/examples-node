@@ -49,9 +49,9 @@ moment-timezone@0.5.23:
     moment ">= 2.9.0"
 
 "moment@>= 2.9.0":
-  version "2.22.2"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
-  integrity sha1-PCV/mDn8DpP/UxSWMiOeuQeD/2Y=
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
+  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
 
 ms@^2.1.1:
   version "2.1.1"
@@ -68,10 +68,10 @@ uniqid@5.0.3:
   resolved "https://registry.yarnpkg.com/uniqid/-/uniqid-5.0.3.tgz#917968310edc868d50df6c44f783f32c7d80fac1"
   integrity sha512-R2qx3X/LYWSdGRaluio4dYrPXAJACTqyUjuyXHoJLBUOIfmMcnYOyY2d6Y4clZcIz5lK6ZaI0Zzmm0cPfsIqzQ==
 
-zenaton@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/zenaton/-/zenaton-0.5.0.tgz#ab325d2e8e5a07cf8cab7a728437c9c60c146046"
-  integrity sha512-uajhvisYQ2oGpkTkaFi4dj9S/LAgfusmE9QQEQ23DxTwcZVVbXAMkT33sfjhR2NKs/m2B1xNjb+FDeo7no48uA==
+zenaton@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/zenaton/-/zenaton-0.5.1.tgz#033ef0989d98b48dcfc112339d0672644956c68f"
+  integrity sha512-3Pa+waW83a0AMN/zQVfJZd0gOJuwXrhwKGoRilGrDZc9zjDANS8RwslUybc9K8/rxohhgSTzLV20GNZuge1sUg==
   dependencies:
     "@babel/runtime" "7.3.1"
     axios "0.18.0"
