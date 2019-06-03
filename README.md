@@ -31,9 +31,9 @@ then add an .env file
 ```
 cp -n .env.example .env
 ```
-and populate it with your application id and api token found [here](https://zenaton.com/app/api).
+and populate it with your application id and api token found [here](https://app.zenaton.com/api).
 
-### Running the agent on Docker
+### Running on Docker
 Simply run
 ```
 docker-compose build; docker-compose up
@@ -41,7 +41,7 @@ docker-compose build; docker-compose up
 
 You're all set!
 
-### Running the agent Locally
+### Running Locally
 Install dependencies
 ```
 yarn
