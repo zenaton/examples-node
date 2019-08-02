@@ -10,6 +10,8 @@ RUN apt-get update \
 # Setup your application
 FROM node:stretch
 
+WORKDIR /app
+
 EXPOSE 4001
 
 # Install Zenaton for your user
