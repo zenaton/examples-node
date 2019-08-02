@@ -10,6 +10,8 @@ RUN apt-get update \
 # Setup your application
 FROM node:stretch
 
+EXPOSE 4001
+
 # Install Zenaton for your user
 COPY --from=zenaton-installer /root/.zenaton /root/.zenaton
 RUN ln -s /root/.zenaton/zenaton /usr/local/bin/zenaton
