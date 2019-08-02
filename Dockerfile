@@ -17,6 +17,7 @@ EXPOSE 4001
 # Install Zenaton for your user
 COPY --from=zenaton-installer /root/.zenaton /root/.zenaton
 RUN ln -s /root/.zenaton/zenaton /usr/local/bin/zenaton
+COPY ./start_zenaton /app/start_zenaton
 
 # Install application dependencies
 WORKDIR /app
