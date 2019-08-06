@@ -1,12 +1,8 @@
-const { Workflow } = require("zenaton");
-const TaskA = require("../Tasks/TaskA");
-const TaskB = require("../Tasks/TaskB");
-const TaskC = require("../Tasks/TaskC");
-const TaskD = require("../Tasks/TaskD");
+const { Workflow, Dispatch} = require("zenaton");
 
 module.exports = Workflow("AsynchronousWorkflow", async function() {
-  await new TaskA().dispatch();
-  await new TaskB().dispatch();
-  await new TaskC().execute();
-  await new TaskD().execute();
+  await Dispatch.task('TaskA');
+  await Dispatch.task('TaskB');
+  await this.execute.task('TaskC');
+  await this.execute.task('TaskD');
 });
