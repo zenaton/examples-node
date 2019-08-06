@@ -1,4 +1,5 @@
 const { Dispatch } = require("zenaton");
 require("./client");
 
-Dispatch.workflow("SequentialWorkflow", "a");
+Dispatch.task("TaskA");
+

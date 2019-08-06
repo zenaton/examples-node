@@ -1,17 +1,15 @@
 const { Workflow } = require("zenaton");
-const TaskA = require("../Tasks/TaskA");
-const TaskB = require("../Tasks/TaskB");
-const TaskC = require("../Tasks/TaskC");
-const TaskD = require("../Tasks/TaskD");
 
-module.exports = Workflow("SequentialWorkflow", async function() {
-  const a = await new TaskA().execute();
+module.exports = Workflow("SequentialWorkflow", {
+  async handle() {
+    let a = await this.execute.task('TaskA');
 
-  if (0 < a) {
-    await new TaskB().execute();
-  } else {
-    await new TaskC().execute();
+    if (0 < a) {
+      await this.execute.task('TaskB');
+    } else {
+      await this.execute.task('TaskC');
+    }
+
+    await this.execute.task('TaskD');
   }
-
-  await new TaskD().execute();
 });

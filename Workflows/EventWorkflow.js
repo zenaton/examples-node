@@ -4,11 +4,9 @@ const TaskB = require("../Tasks/TaskB");
 const TaskC = require("../Tasks/TaskC");
 
 module.exports = Workflow("EventWorkflow", {
-  init(id) {
-    this.id = id;
-    this.state = true;
-  },
   async handle() {
+    this.state = true;
+
     await new TaskA().execute();
 
     if (this.state) {
@@ -21,8 +19,5 @@ module.exports = Workflow("EventWorkflow", {
     if (eventName === "MyEvent") {
       this.state = false;
     }
-  },
-  id() {
-    return this.id;
   }
 });

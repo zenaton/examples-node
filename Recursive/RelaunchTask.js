@@ -2,11 +2,10 @@ require("dotenv").config({ path: __dirname + "/../.env" });
 const { Task, Workflow } = require("zenaton");
 
 module.exports = Task("RelaunchTask", {
-  init(id, max) {
+  async handle(id, max) {
     this.id = id;
     this.max = max;
-  },
-  async handle() {
+
     if (this.id >= this.max) {
       return;
     }
