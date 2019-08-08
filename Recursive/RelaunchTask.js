@@ -1,11 +1,12 @@
 require("dotenv").config({ path: __dirname + "/../.env" });
-const { Task, Workflow } = require("zenaton");
+const { Task, Workflow } = require("zenaton").async;
 
 module.exports = Task("RelaunchTask", {
-  async handle(id, max) {
+  init(id, max) {
     this.id = id;
     this.max = max;
-
+  },
+  async handle() {
     if (this.id >= this.max) {
       return;
     }
@@ -17,7 +18,6 @@ module.exports = Task("RelaunchTask", {
     const id = 1 + this.id;
     console.log(`\nIteration: ${id}`);
 
-    const result = await new RecursiveWorkflow(id, this.max).dispatch();
-    return result;
+    await new RecursiveWorkflow(id, this.max).dispatch();
   }
 });

@@ -9,7 +9,7 @@ module.exports = Workflow("SequentialWorkflow", {
     } else {
       await this.execute.task('TaskC');
     }
-
+    
     await this.execute.task('TaskD');
   }
 });

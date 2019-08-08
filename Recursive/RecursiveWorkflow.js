@@ -1,18 +1,8 @@
-const { Workflow } = require("zenaton");
-const DisplayTask = require("./DisplayTask");
-const RelaunchTask = require("./RelaunchTask");
+const { Version } = require("zenaton").async;
+const RecursiveWorkflow_0 = require("./RecursiveWorkflow_0");
+const RecursiveWorkflow_1 = require("./RecursiveWorkflow_1");
 
-module.exports = Workflow("RecursiveWorkflow", {
-  async handle(id, max) {
-    this.id = id;
-    this.max = max;
-    let counter = 0;
-
-    while (counter < 10) {
-      await new DisplayTask(counter).execute();
-      counter++;
-    }
-
-    await new RelaunchTask(this.id, this.max).execute();
-  }
-});
+module.exports = Version("RecursiveWorkflow", [
+  RecursiveWorkflow_0,
+  RecursiveWorkflow_1,
+]);
