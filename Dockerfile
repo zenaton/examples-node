@@ -14,7 +14,7 @@ COPY launch* /app/
 COPY boot.js client.js /app/
 
 COPY ./start_zenaton /app/start_zenaton
-ADD package.json yarn.lock ./
+COPY package.json yarn.lock ./
 
 # Install application dependencies
 RUN yarn
