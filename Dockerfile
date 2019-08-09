@@ -1,23 +1,26 @@
-# Download Zenaton agent
-FROM debian:stretch AS zenaton-installer
-
-RUN apt-get update \
- && apt-get install -y curl \
- && curl https://install.zenaton.com | sh \
- && apt-get remove -y curl \
- && apt-get clean
-
-# Setup your application
 FROM node:stretch
 
-# Install Zenaton for your user
-COPY --from=zenaton-installer /root/.zenaton /root/.zenaton
-RUN ln -s /root/.zenaton/zenaton /usr/local/bin/zenaton
+RUN apt-get update && apt-get install -y curl
+
+WORKDIR /app
+
+EXPOSE 4001
+
+COPY Parallel /app/Parallel
+COPY Recursive /app/Recursive
+COPY Tasks /app/Tasks
+COPY Workflows /app/Workflows
+COPY launch* /app/
+COPY boot.js client.js /app/
+
+COPY ./start_zenaton /app/start_zenaton
+COPY package.json yarn.lock ./
 
 # Install application dependencies
-WORKDIR /app
-ADD package.json yarn.lock ./
 RUN yarn
+
+# Install Zenaton
+RUN curl https://install.zenaton.com | sh
 
 # Launch agent initialization script
 CMD ["./start_zenaton"]

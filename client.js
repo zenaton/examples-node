@@ -1,5 +1,12 @@
 // load .env file
-require("dotenv").config({ path: __dirname + "/.env" });
+const fs = require("fs");
+const dotenv = require("dotenv");
+const dotenvfile = __dirname + "/.env";
+
+if (fs.existsSync(dotenvfile)) {
+  dotenv.config({ path: dotenvfile });
+}
+
 const { Client } = require("zenaton");
 
 const app_id = process.env.ZENATON_APP_ID;

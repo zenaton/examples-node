@@ -32,20 +32,20 @@ then add an .env file
 cp -n .env.example .env
 ```
 and populate it with your application id and api token found [here](https://app.zenaton.com/api).
-
+Install dependencies
+```
+yarn
+```
 ### Running on Docker
 Simply run
 ```
 docker-compose build; docker-compose up
 ```
+You can check that your agent is running [here](https://app.zenaton.com/agents).
 
 You're all set!
 
 ### Running Locally
-Install dependencies
-```
-yarn
-```
 Then, you need to install the Zenaton agent
 ```
 curl https://install.zenaton.com | sh
