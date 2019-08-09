@@ -1,4 +1,4 @@
-const { Task , Dispatch} = require("zenaton");
+const { Task } = require("zenaton");
 
 module.exports = Task("TaskD", async function() {
   console.log("Task D starts");

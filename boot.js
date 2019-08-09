@@ -12,8 +12,8 @@ require("./Tasks/TaskD");
 // require("./Workflows/AsynchronousWorkflow");
 // require("./Workflows/VersionWorkflow");
 // require("./Workflows/ErrorWorkflow");
-require("./Recursive/RecursiveWorkflow");
+require("./Recursive_old/RecursiveWorkflow");
 
-require("./Recursive.new/RecursiveWorkflow");
-require("./Recursive.new/DisplayTask");
-require("./Recursive.new/RelaunchTask");
+require("./Recursive/RecursiveWorkflow");
+require("./Recursive/DisplayTask");
+require("./Recursive/RelaunchTask");
