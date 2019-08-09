@@ -59,7 +59,17 @@ You're all set!
 
 *Your workflows will be processed by your worker, so you won't see anything except the stdout and stderr, respectively `zenaton.out` and `zenaton.err`. Look at these files :)*
 
-## Example 1 : Sequential tasks execution
+## Example 1: Single task execution
+
+[This example](https://github.com/zenaton/examples-node/tree/master/Tasks/TaskA.js) showcases
+
+- A single execution of a task.
+
+```sh
+node launch_single_task.js
+```
+
+## Example 2 : Sequential tasks execution
 [This example](https://github.com/zenaton/examples-node/tree/master/Workflows/SequentialWorkflow.js) showcases
 - a sequential execution of three tasks. The second and third tasks are executed only when the previous one is processed.
 - In a sequential task execution, you can get the output of a task. The result of a task can be used by the next one.
@@ -77,7 +87,7 @@ You're all set!
 node launch_sequential.js
 ```
 
-## Example 2: Parallel tasks execution
+## Example 3: Parallel tasks execution
 [This example](https://github.com/zenaton/examples-node/tree/master/Workflows/ParallelWorkflow.js) showcases
 - a parallel execution of 2 tasks
 - a third task that is executed only after *both* first two tasks were processed
@@ -96,7 +106,7 @@ node launch_sequential.js
 node launch_parallel.js
 ```
 
-## Example 3: Asynchronous tasks execution
+## Example 4: Asynchronous tasks execution
 [this example](https://github.com/zenaton/examples-node/tree/master/Workflows/AsynchronousWorkflow.js) showcases
 - Asynchronous executions of Task A and Task B (fire and forget)
 - Then sequential executions of Task C and Task D
@@ -118,7 +128,7 @@ node launch_asynchronous.js
 
 When a task is dispatched asynchronously, the workflow continues its execution without waiting for the task completion. Consequently, a task asynchronous dispatching always returns a null value.
 
-## Example 4: Event
+## Example 5: Event
 [This example](https://github.com/zenaton/examples-node/tree/master/Workflows/EventWorkflow.js) showcases
 - how to change a workflow's behaviour based on an external event
 
@@ -135,7 +145,7 @@ When a task is dispatched asynchronously, the workflow continues its execution w
 node launch_event.js
 ```
 
-## Example 5: Wait
+## Example 6: Wait
 [This example](https://github.com/zenaton/examples-node/tree/master/Workflows/WaitWorkflow.js) showcases
 - how the provided `Wait` task can be used to pause the workflow for a specified duration
 
@@ -152,7 +162,7 @@ node launch_event.js
 node launch_wait.js
 ```
 
-## Example 6: Wait Event
+## Example 7: Wait Event
 [This example](https://github.com/zenaton/examples-node/tree/master/Workflows/WaitEventWorkflow.js) showcases
 - how the provided `Wait` task can also be used to pause the workflow up to receiving a specific external event
 
@@ -169,7 +179,7 @@ node launch_wait.js
 node launch_wait_event.js
 ```
 
-## Example 7: Recursive Workflow
+## Example 8: Recursive Workflow
 [This example](https://github.com/zenaton/examples-node/tree/master/Recursive) showcases
 - how launching events or workflows directly from orchestrated tasks allows you to schedule recurring workflows
 
@@ -177,7 +187,7 @@ node launch_wait_event.js
 node launch_recursive.js
 ```
 
-## Example 8: Workflow Versions
+## Example 9: Workflow Versions
 [This example](https://github.com/zenaton/examples-node/tree/master/Workflows/VersionWorkflow.js) showcases
 - how to update your workflow implementation, even while previous versions are still running
 
@@ -185,7 +195,7 @@ node launch_recursive.js
 node launch_version.js
 ```
 
-## Example 9: Managing Errors
+## Example 10: Managing Errors
 [This example](https://github.com/zenaton/examples-node/tree/master/Workflows/ErrorWorkflow.js) showcases
 - how a failed task appear on Zenaton website
 - how to retry a failed task using the retry button
