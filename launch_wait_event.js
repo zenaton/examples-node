@@ -1,17 +1,15 @@
+const uniqid = require("uniqid");
+const { select, dispatch } = require("zenaton");
 require("./client");
 
-const uniqid = require("uniqid");
-const WaitEventWorkflow = require("./Workflows/WaitEventWorkflow");
-
+// my id
 const id = uniqid();
-new WaitEventWorkflow(id).dispatch().catch(err => {
-  console.error(err);
-});
 
+// dispatch a workflow
+dispatch.withId(id).workflow("WaitEventWorkflow");
+
+// then send it an event
 setTimeout(function() {
-  WaitEventWorkflow.whereId(id)
-    .send("MyEvent", {})
-    .catch(err => {
-      console.error(err);
-    });
-}, 1000);
+  select.workflow("WaitEventWorkflow").whereId(id).send("MyEvent", {});
+}, 5000);
+

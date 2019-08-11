@@ -1,6 +1,6 @@
-const { Task } = require("zenaton");
+const task = require("zenaton").task;
 
-module.exports = Task("TaskE", async function() {
+module.exports = task("TaskE", async function() {
   console.log("Task E starts");
 
   throw new Error("Error in TaskE");

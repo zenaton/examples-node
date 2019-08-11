@@ -1,4 +1,4 @@
 require("./client");
-const { Dispatch } = require("zenaton");
+const { dispatch } = require("zenaton");
 
-Dispatch.workflow("RecursiveWorkflow", 0, 10);
+dispatch.workflow("RecursiveWorkflow", 0, 10);

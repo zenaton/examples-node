@@ -1,16 +1,14 @@
-const { Wait, Workflow } = require("zenaton");
+const workflow = require("zenaton").workflow;
 
-module.exports = Workflow("WaitEventWorkflow", {
+module.exports = workflow("WaitEventWorkflow", {
   async handle() {
-    // Wait until the event at most 4 seconds
-    const event = await this.wait.event("MyEvent").for(4);
-
+    // Waiting for an "MyEvent" event, at most 4 seconds
+    const event = await this.wait.event("MyEvent").for(30);
+    // Do "TaskA" if "MyEvent" has been received within 4s, otherwise "TaskB"  
     if (event) {
-      // If event has been triggered within 4 seconds
-      await this.execute.task('TaskA');
+      await this.execute.task("TaskA");
     } else {
-      // else
-      await this.execute.task('TaskB');
+      await this.execute.task("TaskB");
     }
   }
 });

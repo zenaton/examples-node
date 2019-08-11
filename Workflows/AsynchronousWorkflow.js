@@ -1,8 +1,10 @@
-const { Workflow} = require("zenaton");
+const workflow = require("zenaton").workflow;
 
-module.exports = Workflow("AsynchronousWorkflow", async function() {
-  await this.dispatch.task('TaskA');
-  await this.dispatch.task('TaskB');
-  await this.execute.task('TaskC');
-  await this.execute.task('TaskD');
+module.exports = workflow("AsynchronousWorkflow", {
+  async handle() {
+    await this.dispatch.task('TaskA');
+    await this.dispatch.task('TaskB');
+    await this.execute.task('TaskC');
+    await this.execute.task('TaskD');
+  }
 });

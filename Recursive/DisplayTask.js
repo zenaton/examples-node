@@ -1,6 +1,6 @@
-const { Task } = require("zenaton");
+const { task } = require("zenaton");
 
-module.exports = Task("DisplayTask", {
+module.exports = task("DisplayTask", {
   async handle(counter) {
     console.log(counter);
 

@@ -1,5 +1,4 @@
-const { Dispatch } = require("zenaton");
+const { dispatch } = require("zenaton");
 require("./client");
 
-Dispatch.workflow("SequentialWorkflow", 1);
-
+dispatch.workflow("SequentialWorkflow");

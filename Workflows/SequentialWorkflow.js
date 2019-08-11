@@ -1,15 +1,14 @@
-const { Workflow } = require("zenaton");
+const workflow = require("zenaton").workflow;
 
-module.exports = Workflow("SequentialWorkflow", {
+module.exports = workflow("SequentialWorkflow", {
   async handle() {
-    let a = await this.execute.task('TaskA');
-
-    if (0 < a) {
-      await this.execute.task('TaskB');
+    this.a = await this.execute.task("TaskA");
+    // Then do something according to first result
+    if (0 < this.a) {
+      await this.execute.task("TaskB");
     } else {
-      await this.execute.task('TaskC');
+      await this.execute.task("TaskC");
     }
-    
-    await this.execute.task('TaskD');
-  }
+    await this.execute.task("TaskD");
+  },
 });

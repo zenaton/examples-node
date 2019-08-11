@@ -1,6 +1,6 @@
-const { Workflow } = require("zenaton");
+const { workflow } = require("zenaton");
 
-module.exports = Workflow("RecursiveWorkflow", {
+module.exports = workflow("RecursiveWorkflow", {
   async handle(id, max) {
     let counter = 0;
 

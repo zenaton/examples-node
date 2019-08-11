@@ -1,9 +1,7 @@
-const { Workflow } = require("zenaton");
+const { workflow, duration, datetime } = require("zenaton");
 
-module.exports = Workflow("WaitWorkflow", async function() {
+module.exports = workflow("WaitWorkflow", async function() {
   await this.execute.task('TaskA');
-
-  await this.wait.for(10);
-
+  await this.wait.for(datetime.monday(1));
   await this.execute.task('TaskB');
 });

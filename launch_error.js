@@ -1,7 +1,5 @@
+const { Workflow } = require("zenaton");
 require("./client");
 
-const ErrorWorkflow = require("./Workflows/ErrorWorkflow");
+new Workflow("ErrorWorkflow").dispatch();
 
-new ErrorWorkflow().dispatch().catch(err => {
-  console.error(err);
-});
