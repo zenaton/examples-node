@@ -1,3 +1,4 @@
+'use strict';
 const { workflow, duration, datetime } = require("zenaton");
 
 module.exports = workflow("WaitWorkflow", async function() {

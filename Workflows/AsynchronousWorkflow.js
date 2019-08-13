@@ -1,3 +1,4 @@
+'use strict';
 const workflow = require("zenaton").workflow;
 
 module.exports = workflow("AsynchronousWorkflow", {
