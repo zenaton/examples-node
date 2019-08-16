@@ -1,11 +1,11 @@
-'use strict';
-const workflow = require("zenaton").workflow;
+"use strict";
+const { workflow } = require("zenaton");
 
 module.exports = workflow("EventWorkflow", {
   async handle() {
     this.state = true;
     await this.execute.task("TaskA");
-    // Do "TaskB" if "MyEvent" has been received before "TaskA" completion, otherwise "TaskC"  
+    // Do "TaskB" if "MyEvent" has been received before "TaskA" completion, otherwise "TaskC"
     if (this.state) {
       await this.execute.task("TaskB");
     } else {

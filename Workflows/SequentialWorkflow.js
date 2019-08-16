@@ -1,5 +1,5 @@
-'use strict';
-const workflow = require("zenaton").workflow;
+"use strict";
+const { workflow } = require("zenaton");
 
 module.exports = workflow("SequentialWorkflow", {
   async handle() {
@@ -11,5 +11,5 @@ module.exports = workflow("SequentialWorkflow", {
       await this.execute.task("TaskC");
     }
     await this.execute.task("TaskD");
-  },
+  }
 });
