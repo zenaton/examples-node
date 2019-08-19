@@ -1,5 +1,3 @@
-const { dispatch } = require("zenaton");
-require("./client");
+const { dispatch } = require("./client");
 
 dispatch.workflow("WaitWorkflow");
-

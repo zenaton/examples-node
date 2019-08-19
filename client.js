@@ -1,6 +1,6 @@
 // load .env file
 require("dotenv").config({ path: __dirname + "/.env" });
-const { client } = require("zenaton");
+const { Client } = require("zenaton");
 
 const app_id = process.env.ZENATON_APP_ID;
 if (!app_id) {
@@ -27,4 +27,5 @@ if (!app_env) {
 }
 
 // init Zenaton client
-client.init(app_id, api_token, app_env);
+
+module.exports = new Client(app_id, api_token, app_env);

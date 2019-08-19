@@ -1,6 +1,5 @@
 const uniqid = require("uniqid");
-const { dispatch, select } = require("zenaton");
-require("./client");
+const { dispatch, select } = require("./client");
 
 const id = uniqid();
 // dispatch a workflow

@@ -1,4 +1,3 @@
-require("./client");
-const { dispatch } = require("zenaton");
+const { dispatch } = require("./client");
 
-dispatch.workflow("RecursiveWorkflow", 0, 10);
+dispatch.task("RelaunchTask", 1, 10);

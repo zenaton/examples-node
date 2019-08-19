@@ -1,5 +1,3 @@
-const { Dispatch } = require("zenaton");
-require("./client");
+const { dispatch } = require("./client");
 
-Dispatch.task("TaskA");
-
+dispatch.task("TaskA");
