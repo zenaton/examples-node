@@ -212,3 +212,12 @@ node launch_version.js
 ```node
 node launch_error.js
 ```
+
+## Example 11: Automatic retry of failed tasks
+[This example](https://github.com/zenaton/examples-node/tree/master/Tasks/TaskWithRetry.js) showcases
+- how a failed task can be retried automatically
+- how to customize the automatic retry policy
+
+```node
+node launch_automatic_retry.js
+```
