@@ -221,3 +221,11 @@ node launch_error.js
 ```node
 node launch_automatic_retry.js
 ```
+
+## Example 12: Schedule a task
+[This example](https://github.com/zenaton/examples-js/tree/master/schedule_task_a.js) showcases
+- how to schedule a task to make it run periodically
+
+```node
+node schedule_task_a.js
+```
