@@ -8,13 +8,13 @@ require("./Workflows/ErrorWorkflow");
 require("./Workflows/VersionWorkflow_v0");
 require("./Workflows/VersionWorkflow_v1");
 require("./Workflows/VersionWorkflow_v2");
+require("./Workflows/ParallelWorkflow");
 
 require("./Tasks/TaskA");
 require("./Tasks/TaskB");
 require("./Tasks/TaskC");
 require("./Tasks/TaskD");
 require("./Tasks/TaskE");
-// require("./Workflows/ParallelWorkflow");
 
 require("./Recursive/RecursiveWorkflow");
 require("./Recursive/DisplayTask");
