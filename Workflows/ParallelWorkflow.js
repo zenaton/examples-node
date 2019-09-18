@@ -2,15 +2,13 @@
 const { workflow } = require("zenaton");
 
 module.exports = workflow("ParallelWorkflow", async function() {
-  // We start 2 tasks asynchronously
-  const taskA = await this.dispatch.task("TaskA");
-  const taskB = await this.dispatch.task("TaskB");
-  // Then we wait for both completion
-  const [a, b] = await this.wait.completion(taskA, taskB).forever();
+  // We start 2 tasks synchronously
+  const [a, b] = await this.execute.task(["TaskA", 1], ["TaskB", 2]);
+
   // Then do something with both results
   if (a > b) {
-    await this.dispatch.task("TaskC");
+    await this.dispatch.task("TaskC", 3);
   } else {
-    await this.dispatch.task("TaskD");
+    await this.dispatch.task("TaskD", 4);
   }
 });
