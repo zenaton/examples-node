@@ -2,7 +2,7 @@
 const { workflow } = require("zenaton");
 
 module.exports = workflow("EventWorkflow", {
-  handle: function*() {
+  *handle() {
     this.state = true;
     yield this.run.task("TaskA");
     // Do "TaskB" if "MyEvent" has been received before "TaskA" completion, otherwise "TaskC"
@@ -12,7 +12,7 @@ module.exports = workflow("EventWorkflow", {
       yield this.run.task("TaskC");
     }
   },
-  onEvent: function*(name, data) {
+  *onEvent(name, data) {
     if (name === "MyEvent") {
       this.state = false;
     }
