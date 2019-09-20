@@ -1,10 +1,8 @@
 const { task } = require("zenaton");
-const { dispatch } = require("../client");
+const { run } = require("../client");
 
-module.exports = task("RelaunchTask", {
-  async handle(id, max) {
-    console.log(`\nIteration: ${id}`);
+module.exports = task("RelaunchTask", async (id, max) => {
+  console.log(`\nIteration: ${id}`);
 
-    await dispatch.withId(id).workflow("RecursiveWorkflow", id, max);
-  }
+  run.withId(id).workflow("RecursiveWorkflow", id, max);
 });

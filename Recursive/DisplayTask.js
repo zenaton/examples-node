@@ -1,11 +1,9 @@
 const { task } = require("zenaton");
 
-module.exports = task("DisplayTask", {
-  async handle(counter) {
-    console.log(counter);
+module.exports = task("DisplayTask", async counter => {
+  console.log(counter);
 
-    await new Promise(resolve => {
-      setTimeout(resolve, 100);
-    });
-  }
+  await new Promise(resolve => {
+    setTimeout(resolve, 100);
+  });
 });
