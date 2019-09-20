@@ -2,12 +2,12 @@
 const { workflow } = require("zenaton");
 
 module.exports = workflow("VersionWorkflow_v0", {
-  async handle() {
-    await this.dispatch.task("TaskA");
-    await this.execute.task("TaskB");
-    await this.wait.event("MyEvent").forever();
+  handle: function*() {
+    this.run.task("TaskA");
+    yield this.run.task("TaskB");
+    yield this.wait.event("MyEvent").forever();
   },
-  async onEvent(name, data) {
+  onEvent: function*(_name, _data) {
     console.log("Event received for Version 0");
   }
 });
