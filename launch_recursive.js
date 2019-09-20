@@ -1,3 +1,3 @@
-const { dispatch } = require("./client");
+const { run } = require("./client");
 
-dispatch.task("RelaunchTask", 1, 10);
+run.task("RelaunchTask", 1, 10);

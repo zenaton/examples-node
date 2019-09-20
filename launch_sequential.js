@@ -1,3 +1,3 @@
-const dispatch = require("./client").dispatch;
+const run = require("./client").run;
 
-dispatch.workflow("SequentialWorkflow");
+console.log(run.workflow("SequentialWorkflow"));

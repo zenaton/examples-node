@@ -1,11 +1,11 @@
 const uniqid = require("uniqid");
-const { dispatch, select } = require("./client");
+const { run, select } = require("./client");
 
 // my id
 const id = uniqid();
 
 // dispatch a workflow
-dispatch.withId(id).workflow("WaitEventWorkflow");
+run.withId(id).workflow("WaitEventWorkflow");
 
 // then send it an event
 setTimeout(function() {

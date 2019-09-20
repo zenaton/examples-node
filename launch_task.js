@@ -1,3 +1,3 @@
-const { dispatch } = require("./client");
+const { run } = require("./client");
 
-dispatch.task("TaskA");
+run.task("TaskA");

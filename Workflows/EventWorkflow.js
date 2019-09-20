@@ -2,17 +2,17 @@
 const { workflow } = require("zenaton");
 
 module.exports = workflow("EventWorkflow", {
-  async handle() {
+  handle: function*() {
     this.state = true;
-    await this.execute.task("TaskA");
+    yield this.run.task("TaskA");
     // Do "TaskB" if "MyEvent" has been received before "TaskA" completion, otherwise "TaskC"
     if (this.state) {
-      await this.execute.task("TaskB");
+      yield this.run.task("TaskB");
     } else {
-      await this.execute.task("TaskC");
+      yield this.run.task("TaskC");
     }
   },
-  async onEvent(name, data) {
+  onEvent: function*(name, data) {
     if (name === "MyEvent") {
       this.state = false;
     }

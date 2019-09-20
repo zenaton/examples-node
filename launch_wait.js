@@ -1,3 +1,3 @@
-const { dispatch } = require("./client");
+const run = require("./client").run;
 
-dispatch.workflow("WaitWorkflow");
+run.workflow("WaitWorkflow");
