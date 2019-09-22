@@ -1,12 +1,13 @@
 const uniqid = require("uniqid");
 const { run, select } = require("./client");
 
-const id = uniqid();
-run.withId(id).workflow("EventWorkflow");
+const tag = `id:${uniqid()}`;
+
+run.withTag(tag).workflow("EventWorkflow");
 
 setTimeout(function() {
   select
     .workflow("EventWorkflow")
-    .whereId(id)
+    .whereTag(tag)
     .send("MyEvent");
 }, 1000);
