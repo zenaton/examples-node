@@ -11,6 +11,6 @@ run.withTag(tag).workflow("WaitEventWorkflow");
 setTimeout(function() {
   select
     .workflow("WaitEventWorkflow")
-    .whereTag(tag)
-    .send("MyEvent", {});
+    .withTag(tag)
+    .send("MyEvent");
 }, 5000);
