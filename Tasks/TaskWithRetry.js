@@ -1,6 +1,6 @@
-const { Task } = require("zenaton");
+const { task } = require("zenaton");
 
-module.exports = Task("TaskWithRetry", {
+module.exports = task("TaskWithRetry", {
     async handle() {
       console.log("TaskWithRetry starts");
 

@@ -1,7 +1,14 @@
-require("./client");
+const uniqid = require("uniqid");
+const { run, select } = require("./client");
 
-const VersionWorkflow = require("./Workflows/VersionWorkflow");
+const tag = `id:${uniqid()}`;
+// dispatch a workflow
+run.withTag(tag).workflow("VersionWorkflow");
 
-new VersionWorkflow().dispatch().catch(err => {
-  console.error(err);
-});
+// then send it an event
+setTimeout(function() {
+  select
+    .workflow("VersionWorkflow")
+    .withTag(tag)
+    .send("MyEvent");
+}, 5000);

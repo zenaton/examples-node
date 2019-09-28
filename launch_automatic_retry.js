@@ -1,7 +1,4 @@
-require("./client");
+const { run } =  require("./client");
 
-const AutomaticRetryWorkflow = require("./Workflows/AutomaticRetryWorkflow");
+run.workflow("AutomaticRetryWorkflow");
 
-new AutomaticRetryWorkflow().dispatch().catch(err => {
-  console.error(err);
-});

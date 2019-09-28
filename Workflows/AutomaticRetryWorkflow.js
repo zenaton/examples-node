@@ -1,6 +1,5 @@
-const { Workflow } = require("zenaton");
-const TaskWithRetry = require("../Tasks/TaskWithRetry");
+const { workflow } = require("zenaton");
 
-module.exports = Workflow("AutomaticRetryWorkflow", async function() {
-  await new TaskWithRetry().execute();
+module.exports = workflow("AutomaticRetryWorkflow",  function*() {
+  yield this.run.task("TaskWithRetry");
 });

@@ -1,18 +1,14 @@
-const { Workflow, Parallel } = require("zenaton");
-const TaskA = require("../Tasks/TaskA");
-const TaskB = require("../Tasks/TaskB");
-const TaskC = require("../Tasks/TaskC");
-const TaskD = require("../Tasks/TaskD");
+"use strict";
+const { workflow } = require("zenaton");
 
-module.exports = Workflow("ParallelWorkflow", async function() {
-  const [a, b] = await new Parallel(
-    new TaskA(),
-    new TaskB()
-  ).execute();
+module.exports = workflow("ParallelWorkflow", function*() {
+  // We start 2 tasks synchronously
+  const [a, b] = yield this.run.task(["TaskA", 1], ["TaskB", 2]);
 
+  // Then do something with both results
   if (a > b) {
-    await new TaskC().execute();
+    this.run.task("TaskC", 3);
   } else {
-    await new TaskD().execute();
+    this.run.task("TaskD", 4);
   }
 });

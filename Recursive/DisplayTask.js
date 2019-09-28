@@ -1,14 +1,9 @@
-const { Task } = require("zenaton");
+const { task } = require("zenaton");
 
-module.exports = Task("DisplayTask", {
-  init(id) {
-    this.id = id;
-  },
-  async handle() {
-    console.log(`${this.id}`);
+module.exports = task("DisplayTask", async counter => {
+  console.log(counter);
 
-    await new Promise(resolve => {
-      setTimeout(resolve, 1000);
-    });
-  }
+  await new Promise(resolve => {
+    setTimeout(resolve, 100);
+  });
 });

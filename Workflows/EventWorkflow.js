@@ -1,28 +1,20 @@
-const { Workflow } = require("zenaton");
-const TaskA = require("../Tasks/TaskA");
-const TaskB = require("../Tasks/TaskB");
-const TaskC = require("../Tasks/TaskC");
+"use strict";
+const { workflow } = require("zenaton");
 
-module.exports = Workflow("EventWorkflow", {
-  init(id) {
-    this.id = id;
+module.exports = workflow("EventWorkflow", {
+  *handle() {
     this.state = true;
-  },
-  async handle() {
-    await new TaskA().execute();
-
+    yield this.run.task("TaskA");
+    // Do "TaskB" if "MyEvent" has been received before "TaskA" completion, otherwise "TaskC"
     if (this.state) {
-      await new TaskB().execute();
+      yield this.run.task("TaskB");
     } else {
-      await new TaskC().execute();
+      yield this.run.task("TaskC");
     }
   },
-  onEvent(eventName, eventData) {
-    if (eventName === "MyEvent") {
+  *onEvent(name, data) {
+    if (name === "MyEvent") {
       this.state = false;
     }
-  },
-  id() {
-    return this.id;
   }
 });

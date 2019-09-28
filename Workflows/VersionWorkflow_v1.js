@@ -1,12 +1,14 @@
-const { Workflow, Parallel } = require("zenaton");
-const TaskA = require("../Tasks/TaskA");
-const TaskB = require("../Tasks/TaskB");
-const TaskC = require("../Tasks/TaskC");
+"use strict";
+const { workflow } = require("zenaton");
 
-module.exports = Workflow("VersionWorkflow_v1", async function() {
-  await new Parallel(
-    new TaskA(),
-    new TaskB(),
-    new TaskC(),
-  ).execute();
+module.exports = workflow("VersionWorkflow_v1", {
+  *handle() {
+    this.run.task("TaskA");
+    this.run.task("TaskB");
+    yield this.run.task("TaskC");
+    yield this.wait.event("MyEvent").forever();
+  },
+  *onEvent(_name, _data) {
+    console.log("Event received for Version 1");
+  }
 });

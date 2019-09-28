@@ -1,7 +1,3 @@
-require("./client");
+const run = require("./client").run;
 
-const WaitWorkflow = require("./Workflows/WaitWorkflow");
-
-new WaitWorkflow().dispatch().catch(err => {
-  console.error(err);
-});
+run.workflow("WaitWorkflow");

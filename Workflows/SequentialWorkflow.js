@@ -1,17 +1,13 @@
-const { Workflow } = require("zenaton");
-const TaskA = require("../Tasks/TaskA");
-const TaskB = require("../Tasks/TaskB");
-const TaskC = require("../Tasks/TaskC");
-const TaskD = require("../Tasks/TaskD");
+"use strict";
+const { workflow } = require("zenaton");
 
-module.exports = Workflow("SequentialWorkflow", async function() {
-  const a = await new TaskA().execute();
+module.exports = workflow("SequentialWorkflow", function*() {
+  const a = yield this.run.task("TaskA");
 
   if (0 < a) {
-    await new TaskB().execute();
+    yield this.run.task("TaskB");
   } else {
-    await new TaskC().execute();
+    yield this.run.task("TaskC");
   }
-
-  await new TaskD().execute();
+  yield this.run.task("TaskD");
 });

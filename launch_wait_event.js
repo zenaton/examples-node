@@ -1,17 +1,16 @@
-require("./client");
-
 const uniqid = require("uniqid");
-const WaitEventWorkflow = require("./Workflows/WaitEventWorkflow");
+const { run, select } = require("./client");
 
-const id = uniqid();
-new WaitEventWorkflow(id).dispatch().catch(err => {
-  console.error(err);
-});
+// my id
+const tag = `id:${uniqid()}`;
 
+// dispatch a workflow
+run.withTag(tag).workflow("WaitEventWorkflow");
+
+// then send it an event
 setTimeout(function() {
-  WaitEventWorkflow.whereId(id)
-    .send("MyEvent", {})
-    .catch(err => {
-      console.error(err);
-    });
-}, 1000);
+  select
+    .workflow("WaitEventWorkflow")
+    .withTag(tag)
+    .send("MyEvent");
+}, 5000);
