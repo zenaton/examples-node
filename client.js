@@ -27,5 +27,4 @@ if (!app_env) {
 }
 
 // init Zenaton client
-
 module.exports = new Client(app_id, api_token, app_env);
