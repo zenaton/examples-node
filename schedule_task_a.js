@@ -1,5 +1,3 @@
-require("./client");
+const { schedule } = require("./client");
 
-const TaskA = require("./Tasks/TaskA");
-
-new TaskA().schedule('* * * * * *');
+schedule("* * * * * *").task("TaskA")
