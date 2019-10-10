@@ -6,7 +6,6 @@ WORKDIR /app
 
 EXPOSE 4001
 
-COPY Parallel /app/Parallel
 COPY Recursive /app/Recursive
 COPY Tasks /app/Tasks
 COPY Workflows /app/Workflows
