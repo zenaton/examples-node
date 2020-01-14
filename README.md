@@ -13,7 +13,6 @@
   <a href="https://app.zenaton.com/tutorial/node" target="_blank"> Tutorial in Node.js </a> <br>
 </p>
 
-
 # Zenaton examples for Node.js
 
 [Zenaton](https://zenaton.com) helps developers to easily run, monitor and orchestrate background jobs on your workers without managing a queuing system.
@@ -21,43 +20,56 @@ In addition to this, a monitoring dashboard shows you in real-time tasks executi
 
 This repository contains examples of workflows built with Zenaton. These examples illustrates how Zenaton orchestrates tasks that are executed on different workers.
 
-
 ## Installation
+
 Download this repo
+
 ```
 git clone https://github.com/zenaton/examples-node.git && cd examples-node
 ```
+
 then add an .env file
+
 ```
 cp -n .env.example .env
 ```
+
 and populate it with your application id and api token found [here](https://app.zenaton.com/api).
 Install dependencies
+
 ```
 yarn
 ```
+
 ### Running on Docker
+
 Simply run
+
 ```
 docker-compose build; docker-compose up
 ```
+
 You can check that your agent is running [here](https://app.zenaton.com/agents).
 
 You're all set!
 
 ### Running Locally
+
 Then, you need to install the Zenaton agent
+
 ```
 curl https://install.zenaton.com | sh
 ```
+
 and start it, and make it listen to your configuration:
+
 ```
 zenaton start; zenaton listen --env=.env --boot=boot.js
 ```
+
 You're all set!
 
-
-*Your workflows will be processed by your worker, so you won't see anything except the stdout and stderr, respectively `zenaton.out` and `zenaton.err`. Look at these files :)*
+_Your workflows will be processed by your worker, so you won't see anything except the stdout and stderr, respectively `zenaton.out` and `zenaton.err`. Look at these files :)_
 
 ## Example 1: Single task execution
 
@@ -66,11 +78,13 @@ You're all set!
 - A single execution of a task.
 
 ```sh
-node launch_single_task.js
+node launch_task.js
 ```
 
 ## Example 2 : Sequential tasks execution
+
 [This example](https://github.com/zenaton/examples-node/tree/master/Workflows/SequentialWorkflow.js) showcases
+
 - a sequential execution of three tasks. The second and third tasks are executed only when the previous one is processed.
 - In a sequential task execution, you can get the output of a task. The result of a task can be used by the next one.
 
@@ -88,9 +102,11 @@ node launch_sequential.js
 ```
 
 ## Example 3: Parallel tasks execution
+
 [This example](https://github.com/zenaton/examples-node/tree/master/Workflows/ParallelWorkflow.js) showcases
+
 - a parallel execution of 2 tasks
-- a third task that is executed only after *both* first two tasks were processed
+- a third task that is executed only after _both_ first two tasks were processed
 
 <p align="center">
     <img
@@ -99,7 +115,7 @@ node launch_sequential.js
         alt="Parallel Workflow Diagram"
     />
     <img src="https://user-images.githubusercontent.com/36400935/58277197-751fd700-7d99-11e9-8fff-d7c483c8abaf.gif" width="400px"/>
-    
+
 </p>
 
 ```node
@@ -107,10 +123,11 @@ node launch_parallel.js
 ```
 
 ## Example 4: Asynchronous tasks execution
+
 [this example](https://github.com/zenaton/examples-node/tree/master/Workflows/AsynchronousWorkflow.js) showcases
+
 - Asynchronous executions of Task A and Task B (fire and forget)
 - Then sequential executions of Task C and Task D
-
 
 <p align="center">
     <img
@@ -119,7 +136,7 @@ node launch_parallel.js
         alt="Asynchronous Workflow Diagram"
     />
     <img src="https://user-images.githubusercontent.com/36400935/58277203-78b35e00-7d99-11e9-9ae8-cfa92757623f.gif" width="400px"/>
-    
+
 </p>
 
 ```node
@@ -129,7 +146,9 @@ node launch_asynchronous.js
 When a task is dispatched asynchronously, the workflow continues its execution without waiting for the task completion. Consequently, a task asynchronous dispatching always returns a null value.
 
 ## Example 5: Event
+
 [This example](https://github.com/zenaton/examples-node/tree/master/Workflows/EventWorkflow.js) showcases
+
 - how to change a workflow's behaviour based on an external event
 
 <p align="center">
@@ -146,7 +165,9 @@ node launch_event.js
 ```
 
 ## Example 6: Wait
+
 [This example](https://github.com/zenaton/examples-node/tree/master/Workflows/WaitWorkflow.js) showcases
+
 - how the provided `Wait` task can be used to pause the workflow for a specified duration
 
 <p align="center">
@@ -163,7 +184,9 @@ node launch_wait.js
 ```
 
 ## Example 7: Wait Event
+
 [This example](https://github.com/zenaton/examples-node/tree/master/Workflows/WaitEventWorkflow.js) showcases
+
 - how the provided `Wait` task can also be used to pause the workflow up to receiving a specific external event
 
 <p align="center">
@@ -180,7 +203,9 @@ node launch_wait_event.js
 ```
 
 ## Example 8: Recursive Workflow
+
 [This example](https://github.com/zenaton/examples-node/tree/master/Recursive) showcases
+
 - how launching events or workflows directly from orchestrated tasks allows you to schedule recurring workflows
 
 ```node
@@ -188,7 +213,9 @@ node launch_recursive.js
 ```
 
 ## Example 9: Workflow Versions
+
 [This example](https://github.com/zenaton/examples-node/tree/master/Workflows/VersionWorkflow.js) showcases
+
 - how to update your workflow implementation, even while previous versions are still running
 
 ```node
@@ -196,7 +223,9 @@ node launch_version.js
 ```
 
 ## Example 10: Managing Errors
+
 [This example](https://github.com/zenaton/examples-node/tree/master/Workflows/ErrorWorkflow.js) showcases
+
 - how a failed task appear on Zenaton website
 - how to retry a failed task using the retry button
 
@@ -214,7 +243,9 @@ node launch_error.js
 ```
 
 ## Example 11: Automatic retry of failed tasks
+
 [This example](https://github.com/zenaton/examples-node/tree/master/Tasks/TaskWithRetry.js) showcases
+
 - how a failed task can be retried automatically
 - how to customize the automatic retry policy
 
@@ -223,7 +254,9 @@ node launch_automatic_retry.js
 ```
 
 ## Example 12: Schedule a task
+
 [This example](https://github.com/zenaton/examples-node/tree/master/schedule_task_a.js) showcases
+
 - how to schedule a task to make it run periodically
 
 ```node

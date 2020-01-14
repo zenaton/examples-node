@@ -1,7 +1,6 @@
 "use strict";
-const { workflow } = require("zenaton");
 
-module.exports = workflow("ParallelWorkflow", function*() {
+module.exports.handle = function*() {
   // We start 2 tasks synchronously
   const [a, b] = yield this.run.task(["TaskA", 1], ["TaskB", 2]);
 
@@ -11,4 +10,4 @@ module.exports = workflow("ParallelWorkflow", function*() {
   } else {
     this.run.task("TaskD", 4);
   }
-});
+};

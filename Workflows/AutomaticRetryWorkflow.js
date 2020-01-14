@@ -1,5 +1,5 @@
-const { workflow } = require("zenaton");
+"use strict";
 
-module.exports = workflow("AutomaticRetryWorkflow",  function*() {
+module.exports.handle = function*() {
   yield this.run.task("TaskWithRetry");
-});
+};
