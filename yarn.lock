@@ -52,9 +52,9 @@ graphql-request@^1.8.2:
     cross-fetch "2.2.2"
 
 is-buffer@^2.0.2:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-2.0.3.tgz#4ecf3fcf749cbd1e472689e109ac66261a25e725"
-  integrity sha512-U15Q7MXTuZlrbymiz95PJpZxu8IlipAp4dtS3wOdgPXx3mqBnslrWU14kxfHB+Py/+2PVKSr37dMAgM2A4uArw==
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-2.0.4.tgz#3e572f23c8411a5cfd9557c849e3665e0b290623"
+  integrity sha512-Kq1rokWXOPXWuaMAqZiJW4XxsmD9zGx9q4aePabbn3qCRGedtH7Cm+zV8WETitMfu1wdh+Rvd6w5egwSngUX2A==
 
 moment-timezone@0.5.26:
   version "0.5.26"
@@ -99,9 +99,9 @@ whatwg-fetch@2.0.4:
   integrity sha512-dcQ1GWpOD/eEQ97k66aiEVpNnapVj90/+R+SXTPYGHpYBBypfKJEQjLrvMZ7YXbKm21gXd4NcuxUTjiv1YtLng==
 
 zenaton@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/zenaton/-/zenaton-0.7.0.tgz#0f9b83ed44ed4549c1bab1ae453f40e84b9a1f4b"
-  integrity sha512-922/ayohoq6NB+0VRjQIB4sSGSmxpNjG5xh3bO7c1rL2ukr6PY1b8keOik4AcnEsYmpuIhykgM0emcnClpT6LA==
+  version "0.7.3"
+  resolved "https://registry.yarnpkg.com/zenaton/-/zenaton-0.7.3.tgz#b09a018c2a024ce83dbb18b1175c469ed29c987c"
+  integrity sha512-MrBBCK0Iz7ITBcDRmGuLAxW/F7M7bzJ5Fgc8P5vg33bfrErHdCkqzOtB967IGw/hKVBQrOBHNzvlPYhzItcaNQ==
   dependencies:
     "@babel/runtime" "7.5.5"
     axios "0.19.0"
