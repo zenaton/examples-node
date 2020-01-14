@@ -1,6 +1,4 @@
-const task = require("zenaton").task;
-
-module.exports = task("TaskD", async function() {
+module.exports.handle = async function() {
   console.log("Task D starts");
 
   await new Promise(resolve => {
@@ -8,5 +6,6 @@ module.exports = task("TaskD", async function() {
   });
 
   console.log("Task D ends");
+
   return 3;
-});
+};

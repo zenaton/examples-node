@@ -1,6 +1,6 @@
-const { workflow } = require("zenaton");
+"use strict";
 
-module.exports = workflow("RecursiveWorkflow", function*(id, max) {
+module.exports.handle = function*(id, max) {
   let counter = 0;
 
   while (counter < 10) {
@@ -11,4 +11,4 @@ module.exports = workflow("RecursiveWorkflow", function*(id, max) {
   if (id < max) {
     yield this.run.task("RelaunchTask", 1 + id, max);
   }
-});
+};
