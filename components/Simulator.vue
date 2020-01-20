@@ -202,7 +202,7 @@ export default {
       }
       console.log(`send_event !`);
 
-      await this.post(`/api/${this.workflow.name}/event`, payload);
+      await this.post(`/api/${this.workflow_selection}/event`, payload);
       this.logs.event.push({
         text:`[${new Date().toISOString()}] Send event <span class="text-yellow-400">${this.event.name}</span> to workflow id <span class="text-green-400">${this.workflow_selection}</span>`
       })

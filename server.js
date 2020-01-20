@@ -20,21 +20,21 @@ app.get('/', function (req, res) {
   res.sendFile('index.html', { root: __dirname })
 })
 
-app.post('/api/:workflow_name/dispatch', function (req, res) {
+app.post('/api/:workflow_name/dispatch', async function (req, res) {
   console.log(`Dispatch a new instance of ${req.params.workflow_name} with inputs params: ${JSON.stringify(req.body, null, 2)}`)
 
-  const {id} = client.run
-  .workflow(req.params.workflow_name, ...req.body)
+  const {id} = await client.run.workflow(req.params.workflow_name, ...req.body)
 
   res.json({id})
 })
 
-app.post('/api/:workflow_name/event', function (req, res) {
-  console.log(`Send an event for the ${req.params.workflow_name} with data: ${JSON.stringify(req.body, null, 2)}`)
+app.post('/api/:workflow_id/event', function (req, res) {
+  console.log(`Send an event to the instance ${req.params.workflow_id} with data: ${JSON.stringify(req.body, null, 2)}`)
 
   // Send an event to a Zenaton Workflow instance
   client.select
-    .workflow(req.params.workflow_name)
+    .workflow()
+    .withId(req.params.workflow_id)
     .send(req.body.name, ...req.body.data)
 
   res.json({})
