@@ -38,7 +38,7 @@
 
     <div class="mt-6 flex bg-white shadow-md rounded">
       <div class="w-1/3">
-        <form @submit="send_event" class="px-8 pt-6 pb-8 mh-430">
+        <form @submit="send_event" class="px-8 pt-6 pb-8 mh-480">
           <h2 class="pb-6">#2 Send Event to a Workflow</h2>
           <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="workflow_selection">Workflow ID</label>
@@ -74,7 +74,7 @@
           <submit-button :disabled="!workflow.name" :onClick="send_event">Send event</submit-button>
         </form>
       </div>
-      <div class="w-2/3 bg-gray-800 p-2 font-mono text-sm mh-430">
+      <div class="w-2/3 bg-gray-800 p-2 font-mono text-sm mh-480">
         <logs id="logListEvent" :logs="logs.event" />
       </div>
     </div>
@@ -103,7 +103,6 @@ export default {
           workflow_selection: null, name: null, data: null
         }
       },
-      isBlinking: false,
       logs: {
         workflow: [],
         event: []
@@ -207,28 +206,6 @@ export default {
         text:`[${new Date().toISOString()}] Send event <span class="text-yellow-400">${this.event.name}</span> to workflow id <span class="text-green-400">${this.workflow_selection}</span>`
       })
     },
-    curl_launch() {
-      const payload = JSON.stringify(this.workflow);
-
-      return `curl -X POST https://gateway.zenaton.com/rest-api/v1/instances \\
-  -H "Content-Type: application/json" \\
-  -H "Accept: application/json" \\
-  -H "app-env: sandbox" \\
-  -H "app-id: MYPITXAOVS" \\
-  -H "api-token: 5z4ykmAIBiSlg9YfvnUUUQC2aIvYCMTXjUwxX6rb0PLMxPkVIxYQTx5vyxDq" \\
-  -d '${payload}'`;
-    },
-    curl_event() {
-      const payload = JSON.stringify(this.event);
-
-      return `curl -X POST https://gateway.zenaton.com/rest-api/v1/instances/:intent_id/event \\
-  -H "Content-Type: application/json" \\
-  -H "Accept: application/json" \\
-  -H "app-env: sandbox" \\
-  -H "app-id: MYPITXAOVS" \\
-  -H "api-token: 5z4ykmAIBiSlg9YfvnUUUQC2aIvYCMTXjUwxX6rb0PLMxPkVIxYQTx5vyxDq" \\
-  -d '${payload}'`;
-    },
     post(url, payload) {
       return fetch(url, {
         method: "post",
@@ -244,7 +221,7 @@ export default {
   .mh-400 {
     height: 400px;
   }
-  .mh-430 {
+  .mh-480 {
     height: 480px;
   }
   @keyframes blinking {
