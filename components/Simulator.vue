@@ -25,7 +25,7 @@
 
           <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="input">Workflow input</label>
-            <json-textarea id="workflow_input" :onChangeInput="onChangeWfInput" :value="workflow.input" />
+            <json-textarea id="workflow_input" v-model="workflow.input" />
             <p v-bind:class="[errors.workflow.input ? 'visible' : 'invisible']" class="text-red-500 text-xs italic h-1">{{ errors.workflow.input }}</p>
           </div>
           <submit-button :onClick="dispatch">Dispatch</submit-button>
@@ -67,7 +67,7 @@
 
           <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="event_data">Event data</label>
-            <json-textarea id="event_data" :onChangeInput="onChangeEventData" :value="event.data" />
+            <json-textarea id="event_data" v-model="event.data" />
             <p v-bind:class="[errors.event.data ? 'visible' : 'invisible']" class="text-red-500 text-xs italic h-1">{{ errors.event.data }}</p>
           </div>
 
@@ -138,12 +138,6 @@ export default {
     }
   },
   methods: {
-    onChangeWfInput(input) {
-      this.workflow.input = input;
-    },
-    onChangeEventData(data) {
-      this.event.data = data;
-    },
     async dispatch(e) {
       e.preventDefault();
 
@@ -223,17 +217,5 @@ export default {
   }
   .mh-480 {
     height: 480px;
-  }
-  @keyframes blinking {
-    0%{
-      border: 1px solid rgb(226, 232, 240);
-    }
-    40%{
-      border: 1px solid #68d391;
-      background-color: #68d391;
-    }    
-  }
-  .blink{
-    animation: blinking 0.2s 2;
   }
 </style>

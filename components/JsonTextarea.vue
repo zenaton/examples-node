@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <div class="shadow border" v-bind:class="{ 'border-red-500': error }">
-      <textarea :name="id" :id="id" v-model="input"></textarea>
-    </div>
+  <div class="shadow border">
+    <textarea :id="id" v-bind:value="value" />
   </div>
 </template>
 
@@ -14,22 +12,20 @@ export default {
   name: "JsonTextarea",
   props: {
     id: { type: String },
-    value: { type: String },
-    onChangeInput: { type: Function }
+    value: { type: String }
   },
-  data: function() {
+  data() {
     return {
-      editor: null,
-      input: this.value,
-      error: false
+      editor: null
     };
   },
   mounted() {
     this.editor = CodeMirror.fromTextArea(document.getElementById(this.id), {
+      value: this.value,
       lineNumbers: true
     });
     this.editor.on("change", cm => {
-      this.onChangeInput(cm.getValue());
+      this.$emit("input", cm.getValue());
     });
   }
 };
