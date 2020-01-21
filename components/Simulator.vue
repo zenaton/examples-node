@@ -24,6 +24,7 @@
 import DispatchForm from "../components/DispatchForm.vue";
 import SendEventForm from "../components/SendEventForm.vue";
 import Logs from "../components/Logs.vue";
+import api from "../api";
 
 export default {
   name: "Simulator",
@@ -46,11 +47,7 @@ export default {
       console.log("onDispatch ->", data)
       const {name, input} = data;
 
-      // CALL API service
-      const payload = JSON.parse(input)
-      const {id} = await this.post(`/api/${name}/dispatch`, payload);
-      // const id = '0149660c-4d90-45cd-a5bc-ce26303639af'
-      console.log(`dispatch !`, id);
+      const id = await api.dispatch(name, input)
 
       this.workflow_instances.push({id, name})
 
@@ -61,9 +58,9 @@ export default {
       const {event, workflow_selection} = data;
 
       const payload = {
-          name: event.name,
-          data: JSON.parse(event.data)
-        }
+        name: event.name,
+        data: JSON.parse(event.data)
+      }
         
       await this.post(`/api/${workflow_selection}/event`, payload);
 
