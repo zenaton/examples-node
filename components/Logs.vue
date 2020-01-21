@@ -1,6 +1,6 @@
 <template>
   <ul class="h-full overflow-scroll" :ref="id">
-    <li class="text-gray-100" v-for="(log, i) of logs" v-html="log.text" :key="i"></li>
+    <li class="text-gray-100" v-for="(log, i) of logs" v-html="log" :key="i"></li>
   </ul>
 </template>
 

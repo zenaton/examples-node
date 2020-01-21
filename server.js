@@ -29,7 +29,7 @@ app.post('/api/:workflow_name/dispatch', async function (req, res) {
 })
 
 app.post('/api/:workflow_id/event', function (req, res) {
-  console.log(`Send an event to the instance ${req.params.workflow_id} with data: ${JSON.stringify(req.body, null, 2)}`)
+  console.log(`Send an event ${req.body.name} to the instance ${req.params.workflow_id} with data: ${JSON.stringify(req.body.data, null, 2)}`)
 
   // Send an event to a Zenaton Workflow instance
   client.select
