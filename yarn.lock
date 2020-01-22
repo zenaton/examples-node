@@ -5566,10 +5566,10 @@ yargs@~3.10.0:
     decamelize "^1.0.0"
     window-size "0.1.0"
 
-zenaton@^0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/zenaton/-/zenaton-0.7.1.tgz#3072dfc1cda2e6daea074bfac539ac55f45ac9b4"
-  integrity sha512-6ZiGYQoNA3M9pAPv/KmVrwLInfYR8Srot0vqSuUiALr66o5Dqu/luL8b4g9eTyEsg8lEpwFRZjzuRFLYOat+OQ==
+zenaton@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/zenaton/-/zenaton-0.8.0.tgz#67d54fd85b24a94674604029bc84f9eeca8e0ae4"
+  integrity sha512-fqo3Z2lXUuscLlR03T50r6yDVPif1n0mEj0A9mtHLlJLM8bWa0AOHrxxkKVqXbDFfVsaET0XWFR8R5xIVC+yRQ==
   dependencies:
     "@babel/runtime" "7.5.5"
     axios "0.19.0"
