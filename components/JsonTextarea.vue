@@ -16,8 +16,17 @@ export default {
   },
   data() {
     return {
-      editor: null
+      editor: null,
+      contentBackup: this.value
     };
+  },
+  watch: {
+    value: function(newV, oldV) {
+      if(this.contentBackup !== newV){
+        this.editor.setValue(newV,1);
+        this.contentBackup = newV;
+      }
+    }
   },
   mounted() {
     this.editor = CodeMirror.fromTextArea(document.getElementById(this.id), {
@@ -25,7 +34,8 @@ export default {
       lineNumbers: true
     });
     this.editor.on("change", cm => {
-      this.$emit("input", cm.getValue());
+      this.contentBackup = cm.getValue();
+      this.$emit("input", this.contentBackup);
     });
   }
 };
