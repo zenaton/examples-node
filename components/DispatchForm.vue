@@ -39,6 +39,7 @@
 <script>
 import JsonTextarea from "../components/JsonTextarea.vue";
 import SubmitButton from "../components/SubmitButton.vue";
+import {workflows} from "../config";
 
 export default {
   name: "DispatchForm",
@@ -60,20 +61,7 @@ export default {
   },
   computed: {
     workflow_autocomplete() {
-      return [
-        "AsynchronousWorkflow",
-        "AutomaticRetryWorkflow",
-        "ErrorWorkflow",
-        "EventWorkflow",
-        "ParallelWorkflow",
-        "SequentialWorkflow",
-        "VersionWorkflow",
-        "VersionWorkflow_v0",
-        "VersionWorkflow_v1",
-        "VersionWorkflow_v2",
-        "WaitEventWorkflow",
-        "WaitWorkflow"
-      ];
+      return workflows.map(x => x.name)
     }
   },
   methods: {
