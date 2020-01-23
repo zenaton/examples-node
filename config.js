@@ -1,5 +1,6 @@
 module.exports = {
   port: 4000,
+  default_workflow: 'WaitWorkflow',
   workflows: [
     { name: "SequentialWorkflow", input: [], event: [] },
     { name: "ParallelWorkflow", input: [], event: [] },

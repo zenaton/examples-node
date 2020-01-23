@@ -39,7 +39,7 @@
 <script>
 import JsonTextarea from "../components/JsonTextarea.vue";
 import SubmitButton from "../components/SubmitButton.vue";
-import {workflows} from "../config";
+import {default_workflow,workflows} from "../config";
 
 export default {
   name: "DispatchForm",
@@ -54,7 +54,7 @@ export default {
         input: null
       },
       workflow: {
-        name: "SequentialWorkflow",
+        name: default_workflow,
         input: JSON.stringify([{ foo: "bar" }], null, 2)
       }
     };
