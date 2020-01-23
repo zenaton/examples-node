@@ -48,6 +48,8 @@ export default {
     SubmitButton
   },
   data() {
+    const input = workflows.find(w => w.name === default_workflow)['input'];
+
     return {
       errors: {
         name: null,
@@ -55,7 +57,7 @@ export default {
       },
       workflow: {
         name: default_workflow,
-        input: JSON.stringify([{ foo: "bar" }], null, 2)
+        input: JSON.stringify(input, null, 2)
       }
     };
   },
