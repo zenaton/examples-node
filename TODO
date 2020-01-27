@@ -1,0 +1,5 @@
+[x] flashy -> select
+[x] add the withId to dispatch the workflow
+[ ] -> use .zenaton format to config wf/input/events
+[x] check event is [1,2] or 1,2
+[ ] ask team about full link in website (app,env,wf,wf_id)
