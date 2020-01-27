@@ -1,0 +1,11 @@
+body {
+  background-color: #edf2f6;
+}
+
+.CodeMirror.cm-s-default {
+  height: 100px;
+}
+
+.appearance-none {
+  -webkit-appearance: none;
+}
