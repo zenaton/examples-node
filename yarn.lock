@@ -89,19 +89,19 @@ uniqid@5.0.3:
   integrity sha512-R2qx3X/LYWSdGRaluio4dYrPXAJACTqyUjuyXHoJLBUOIfmMcnYOyY2d6Y4clZcIz5lK6ZaI0Zzmm0cPfsIqzQ==
 
 uuid@^3.3.3:
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.3.tgz#4568f0216e78760ee1dbf3a4d2cf53e224112866"
-  integrity sha512-pW0No1RGHgzlpHJO1nsVrHKpOEIxkGg1xB+v0ZmdNH5OAeAwzAVrCnI2/6Mtx+Uys6iaylxa+D3g4j63IKKjSQ==
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
+  integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
 whatwg-fetch@2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
   integrity sha512-dcQ1GWpOD/eEQ97k66aiEVpNnapVj90/+R+SXTPYGHpYBBypfKJEQjLrvMZ7YXbKm21gXd4NcuxUTjiv1YtLng==
 
-zenaton@^0.7.0:
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/zenaton/-/zenaton-0.7.3.tgz#b09a018c2a024ce83dbb18b1175c469ed29c987c"
-  integrity sha512-MrBBCK0Iz7ITBcDRmGuLAxW/F7M7bzJ5Fgc8P5vg33bfrErHdCkqzOtB967IGw/hKVBQrOBHNzvlPYhzItcaNQ==
+zenaton@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/zenaton/-/zenaton-0.8.0.tgz#67d54fd85b24a94674604029bc84f9eeca8e0ae4"
+  integrity sha512-fqo3Z2lXUuscLlR03T50r6yDVPif1n0mEj0A9mtHLlJLM8bWa0AOHrxxkKVqXbDFfVsaET0XWFR8R5xIVC+yRQ==
   dependencies:
     "@babel/runtime" "7.5.5"
     axios "0.19.0"
