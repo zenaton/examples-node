@@ -8,5 +8,6 @@ module.exports.handle = function*() {
   } else {
     yield this.run.task("TaskC");
   }
+
   yield this.run.task("TaskD");
 };

@@ -1,13 +1,13 @@
 "use strict";
 
 module.exports.handle = function*() {
-  // We start 2 tasks synchronously
-  const [a, b] = yield this.run.task(["TaskA", 1], ["TaskB", 2]);
+  // We start 2 tasks in parallel
+  const [a, b] = yield this.run.task(["TaskA"], ["TaskB"]);
 
   // Then do something with both results
   if (a > b) {
-    this.run.task("TaskC", 3);
+    this.run.task("TaskC");
   } else {
-    this.run.task("TaskD", 4);
+    this.run.task("TaskD");
   }
 };
